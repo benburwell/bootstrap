@@ -16,7 +16,6 @@
       - ctop
       - dep
       - elinks
-      - ext4fuse
       - fetchmail
       - ffmpeg
       - fftw
