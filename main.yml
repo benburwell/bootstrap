@@ -3,6 +3,7 @@
   connection: local
   roles:
     - terminal
+    - dotfiles
     - sysadmin
     - gpg
     - pass
