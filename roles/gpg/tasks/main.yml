@@ -1,0 +1,8 @@
+---
+- name: Install packages
+  homebrew:
+    state: present
+    name:
+      - gpgme
+      - gnupg
+      - pinentry-mac

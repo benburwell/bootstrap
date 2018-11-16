@@ -1,0 +1,72 @@
+---
+- name: Install admin CLI tools
+  homebrew:
+    state: present
+    name:
+      - git
+      - ctags
+      - gcc
+      - sqlite
+      - htop
+      - python
+      - python@2
+      - qemu
+      - hub
+      - jq
+      - mitmproxy
+      - mosh
+      - mysql-client
+      - neovim
+      - nmap
+      - osquery
+      - telnet
+      - testssl
+      - tldr
+      - um
+      - pandoc
+      - pdftohtml
+      - ripgrep
+      - s3cmd
+      - shellcheck
+      - stow
+      - tree
+      - travis
+      - wrk
+      - watch
+      - ansible
+- name: Install The Unarchiver
+  homebrew_cask:
+    name: the-unarchiver
+    state: present
+- name: Install VirtualBox
+  homebrew_cask:
+    name: virtualbox
+    state: present
+- name: Install Wireshark
+  homebrew_cask:
+    name: wireshark
+    state: present
+- name: Install Transmission
+  homebrew_cask:
+    name: transmission
+    state: present
+- name: Install ngrok
+  homebrew_cask:
+    name: ngrok
+    state: present
+- name: Install Etcher
+  homebrew_cask:
+    name: etcher
+    state: present
+- name: Install MacVim
+  homebrew_cask:
+    name: macvim
+    state: present
+- name: Install Postico
+  homebrew_cask:
+    name: postico
+    state: present
+- name: Install Viscosity
+  homebrew_cask:
+    name: viscosity
+    state: present

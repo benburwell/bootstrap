@@ -1,0 +1,9 @@
+---
+- name: Install go
+  homebrew:
+    name: go
+    state: present
+- name: Install dep
+  homebrew:
+    name: dep
+    state: present

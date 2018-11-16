@@ -1,0 +1,5 @@
+---
+- name: Install MacTex
+  homebrew_cask:
+    name: mactex
+    state: present

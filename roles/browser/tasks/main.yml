@@ -1,0 +1,13 @@
+---
+- name: Install Firefox
+  homebrew_cask:
+    name: firefox
+    state: present
+- name: Install lynx
+  homebrew:
+    name: lynx
+    state: present
+- name: Install Chromium
+  homebrew_cask:
+    name: chromium
+    state: present

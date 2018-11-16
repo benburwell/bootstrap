@@ -1,0 +1,19 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  roles:
+    - terminal
+    - sysadmin
+    - gpg
+    - pass
+    - browser
+    - comm
+    - docker
+    - finance
+    - golang
+    - java
+    - nodejs
+    - tex
+    - media
+    - minecraft
+    - dropbox
