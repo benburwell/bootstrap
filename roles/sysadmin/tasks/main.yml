@@ -1,39 +1,71 @@
 ---
-- name: Install admin CLI tools
+- name: Install Neovim
   homebrew:
+    name: neovim
     state: present
+- name: Install git and hub
+  homebrew:
     name:
       - git
-      - ctags
-      - gcc
-      - sqlite
-      - htop
-      - python
-      - python@2
-      - qemu
       - hub
-      - jq
+    state: present
+- name: Install telnet, mosh, mitmproxy, nmap, wrk, testssl
+  homebrew:
+    name:
       - mitmproxy
       - mosh
-      - mysql-client
-      - neovim
       - nmap
-      - osquery
       - telnet
-      - testssl
+      - wrk
+- name: Install ctags, jq, ripgrep
+  homebrew:
+    name:
+      - ctags
+      - jq
+      - ripgrep
+    state: present
+- name: Install sqlite
+  homebrew:
+    name: sqlite
+    state: present
+- name: Install Python 2
+  homebrew:
+    name: python@2
+    state: present
+- name: Install Python 3
+  homebrew:
+    name: python
+    state: present
+- name: Install tldr, um, pandoc, pdftohtml
+  homebrew:
+    name:
       - tldr
       - um
       - pandoc
       - pdftohtml
-      - ripgrep
-      - s3cmd
-      - shellcheck
-      - stow
-      - tree
-      - travis
-      - wrk
+    state: present
+- name: Install ansible
+  homebrew:
+    name: ansible
+    state: present
+- name: Install watch and htop
+  homebrew:
+    name:
       - watch
-      - ansible
+      - htop
+    state: present
+- name: Install qemu
+  homebrew:
+    state: present
+    name: qemu
+- name: Install shellcheck
+  homebrew:
+    state: present
+    name: shellcheck
+- name: Install tree
+  homebrew:
+    state: present
+    name: tree
 - name: Install The Unarchiver
   homebrew_cask:
     name: the-unarchiver

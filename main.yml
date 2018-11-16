@@ -8,6 +8,7 @@
     - pass
     - browser
     - comm
+    - aws
     - docker
     - finance
     - golang

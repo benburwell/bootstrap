@@ -1,0 +1,5 @@
+---
+- name: Install s3cmd
+  homebrew:
+    name: s3cmd
+    state: present
