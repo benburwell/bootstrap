@@ -1,4 +1,10 @@
 ---
+- name: Install awscli
+  pip:
+    name: awscli
+    state: present
+- name: Create credentials file
+  template: src=credential dest={{lookup('env', 'HOME')}}/.aws/credentials
 - name: Install s3cmd
   homebrew:
     name: s3cmd
