@@ -1,0 +1,7 @@
+---
+- name: Configure macOS desktop environment
+  include_tasks: macos.yml
+  when: ansible_facts['system'] == "Darwin"
+- name: Configure Linux desktop environment
+  include_tasks: linux.yml
+  when: ansible_facts['system'] == "Linux"
