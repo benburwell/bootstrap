@@ -1,3 +1,5 @@
 ---
-ansible_aws_access_key: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
-ansible_aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
+#ansible_aws_access_key: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
+#ansible_aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
+
+# vim: ft=yaml
