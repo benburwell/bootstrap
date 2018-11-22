@@ -5,8 +5,8 @@
     - i3
     - urxvt
     - tmux
-#    - terminal
-#    - dotfiles
+    - firefox
+    - lynx
 #    - sysadmin
 #    - gpg
 #    - pass

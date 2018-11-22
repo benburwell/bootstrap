@@ -3,8 +3,9 @@
   connection: local
   roles:
     - iterm2
-#    - terminal
-#    - dotfiles
+    - tmux
+    - firefox
+    - lynx
 #    - sysadmin
 #    - gpg
 #    - pass
