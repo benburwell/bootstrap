@@ -3,4 +3,6 @@
     path: ~/.Xdefaults
     regexp: '^URxvt\*scrollBar'
     line: 'URxvt*scrollBar: false'
+    state: present
+    create: yes
 
