@@ -1,8 +1,13 @@
 ---
 - lineinfile:
     path: ~/.Xdefaults
-    regexp: '^URxvt\*scrollBar'
-    line: 'URxvt*scrollBar: false'
+    regexp: '^URxvt\*{{item.key}}'
+    line: 'URxvt*{{item.key}}: {{item.value}}'
     state: present
     create: yes
+  loop:
+    - { key: 'scrollBar', value: 'false' }
+    - { key: 'foreground', value: '#00a595' }
+    - { key: 'background', value: '#000000' }
+
 
