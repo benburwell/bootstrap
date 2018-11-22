@@ -1,5 +1,6 @@
 ---
-- lineinfile:
+- name: URxvt Xdefaults
+  lineinfile:
     path: ~/.Xdefaults
     regexp: '^URxvt\*{{item.key}}'
     line: 'URxvt*{{item.key}}: {{item.value}}'
@@ -9,5 +10,25 @@
     - { key: 'scrollBar', value: 'false' }
     - { key: 'foreground', value: '#00a595' }
     - { key: 'background', value: '#000000' }
-
+    - { key: 'loginShell', value: 'true' }
+    - { key: 'cursorColor', value: '#bbbbbb' }
+    - { key: 'color0', value: '#000000' }
+    - { key: 'color1', value: '#9f0000' }
+    - { key: 'color2', value: '#008b00' }
+    - { key: 'color3', value: '#ffd000' }
+    - { key: 'color4', value: '#0081ff' }
+    - { key: 'color5', value: '#bc00ca' }
+    - { key: 'color6', value: '#008b8b' }
+    - { key: 'color7', value: '#bbbbbb' }
+    - { key: 'color8', value: '#555555' }
+    - { key: 'color9', value: '#ff0000' }
+    - { key: 'color10', value: '#00ee00' }
+    - { key: 'color11', value: '#ffff00' }
+    - { key: 'color12', value: '#0000ff' }
+    - { key: 'color13', value: '#ff00ff' }
+    - { key: 'color14', value: '#00cdcd' }
+    - { key: 'color15', value: '#ffffff' }
+    - { key: 'colorBD', value: '#4cf1e1' }
+    - { key: 'termName', value: 'xterm-256color' }
+    - { key: 'saveLines', value: '0' }
 
