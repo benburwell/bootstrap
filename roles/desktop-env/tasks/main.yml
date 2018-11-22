@@ -1,4 +1,4 @@
 ---
 - name: Configure Linux desktop environment
-  include_role: i3
+  include_role: name=i3
   when: ansible_facts['system'] == "Linux"
