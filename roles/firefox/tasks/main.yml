@@ -2,4 +2,5 @@
 - homebrew_cask: name=firefox state=present
   when: ansible_facts['system'] == "Darwin"
 - apt: name=firefox-esr state=present
+  become: true
   when: ansible_facts['system'] == "Linux"
