@@ -1,7 +1,4 @@
 ---
-- name: Configure macOS desktop environment
-  include: macos.yml
-  when: ansible_facts['system'] == "Darwin"
 - name: Configure Linux desktop environment
-  include: linux.yml
+  include_role: i3
   when: ansible_facts['system'] == "Linux"
