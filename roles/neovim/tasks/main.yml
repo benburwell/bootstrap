@@ -1,0 +1,13 @@
+---
+- homebrew: name=neovim state=present
+  when: ansible_facts['system'] == "Darwin"
+- apt: name=neovim state=present
+  become: true
+  when: ansible_facts['system'] == "Linux"
+- copy: src=vimrc dest=~/.config/nvim/init.vim
+- file: src=~/.config/nvim/init.vim dest=~/.vimrc state=link
+- get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.local/share/nvim/site/autoload/plug.vim
+  notify:
+    - PlugInstall

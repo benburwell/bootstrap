@@ -6,10 +6,10 @@
     - tmux
     - firefox
     - lynx
+    - neovim
 #    - sysadmin
 #    - gpg
 #    - pass
-#    - browser
 #    - comm
 #    - aws
 #    - docker
