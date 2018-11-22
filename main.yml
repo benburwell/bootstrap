@@ -3,6 +3,7 @@
   connection: local
   roles:
     - desktop-env
+    - urxvt
 #    - terminal
 #    - dotfiles
 #    - sysadmin

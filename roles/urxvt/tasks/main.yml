@@ -1,0 +1,6 @@
+---
+- lineinfile:
+    path: ~/.Xdefaults
+    regexp: '^URxvt\*scrollBar'
+    line: 'URxvt*scrollBar: false'
+
