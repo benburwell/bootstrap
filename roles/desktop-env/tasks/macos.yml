@@ -1,6 +1,0 @@
----
-- name: macOS Dark UI
-  osx_defaults:
-    key: AppleInterfaceStyle
-    value: Dark
-    state: present
