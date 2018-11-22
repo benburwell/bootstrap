@@ -7,3 +7,5 @@
   apt: name=i3 state=present
 - name: Install i3 configuration
   copy: src=i3config dest=~/.config/i3/config
+- name: Install i3 statusbar
+  copy: src=i3status dest=~/.i3status.conf
