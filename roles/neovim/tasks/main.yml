@@ -5,6 +5,7 @@
   become: true
   when: ansible_facts['system'] == "Linux"
 - pip: name=neovim state=present
+  become: true
 - file: path=~/.config/nvim state=directory
 - copy: src=vimrc dest=~/.config/nvim/init.vim
 - file: src=~/.config/nvim/init.vim dest=~/.vimrc state=link
