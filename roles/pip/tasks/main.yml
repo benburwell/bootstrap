@@ -28,7 +28,9 @@
   failed_when: no
 
 - name: ensure correct pip version is installed
-  pip: name=pip version="{{ pip_version }}"
+  pip:
+    name: pip
+    version: "{{ pip_version }}"
   become: yes
   when: pip_task_version is defined and
         pip_task_version.stdout is defined and
