@@ -1,4 +1,5 @@
 ---
+- apt: name=rxvt-unicode-256color
 - name: URxvt Xdefaults
   lineinfile:
     path: ~/.Xdefaults

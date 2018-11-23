@@ -6,6 +6,7 @@
     - tmux
     - firefox
     - lynx
+    - pip
     - neovim
 #    - sysadmin
 #    - gpg
