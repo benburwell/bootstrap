@@ -3,4 +3,4 @@
   become: true
   apt: name=xorg state=present
 - name: Install Xdefaults
-  copy: src=Xdefaults dest=~/.Xdefaults
+  template: src=Xdefaults dest=~/.Xdefaults
