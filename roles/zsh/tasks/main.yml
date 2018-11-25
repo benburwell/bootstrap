@@ -2,10 +2,10 @@
 - apt: name=zsh state=present
   become: yes
   when: ansible_facts['system'] == "Linux"
-- template: src=zshrc dest=~/.zshrc
+- copy: src=zshrc dest=~/.zshrc
 - file: path=~/.zsh state=directory
 - file: path=~/.zsh/functions state=directory
-- template: src={{item}} dest=~/.zsh/{{item}}
+- copy: src={{item}} dest=~/.zsh/{{item}}
   loop:
     - aliases.zsh
     - config.zsh
@@ -13,7 +13,7 @@
     - path.zsh
     - prompt.zsh
     - window.zsh
-- name: Install FZF
-  homebrew:
-    name: fzf
-    state: present
+# - name: Install FZF
+#   homebrew:
+#     name: fzf
+#     state: present
