@@ -6,6 +6,7 @@
 - unarchive:
     src: https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
     dest: /usr/local
+    remote_src: yes
   become: true
   when: ansible_facts['system'] == "Linux"
 
