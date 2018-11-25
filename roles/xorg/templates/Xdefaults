@@ -4,29 +4,49 @@
  * vim: ft=xdefaults
  */
 
-URxvt*font: xft:Fira Code:pixelsize=12:style=regular
-URxvt*boldFont: xft:Fira Code:pixelsize=12:style=bold
-URxvt*loginShell: true
+URxvt.font: xft:Fira Code:pixelsize=14:style=regular
+URxvt.boldFont: xft:Fira Code:pixelsize=14:style=bold
+URxvt.letterSpace: -1
+
 /* colors are from the ENCOM theme for iTerm2: */
 /* https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/Xresources/ENCOM */
-URxvt*foreground: #00a595
-URxvt*background: #000000
-URxvt*cursorColor: #bbbbbb
-URxvt*color0: #000000
-URxvt*color1: #9f0000
-URxvt*color2: #008b00
-URxvt*color3: #ffd000
-URxvt*color4: #0081ff
-URxvt*color5: #bc00ca
-URxvt*color6: #008b8b
-URxvt*color7: #bbbbbb
-URxvt*color8: #555555
-URxvt*color9: #ff0000
-URxvt*color10: #00ee00
-URxvt*color11: #ffff00
-URxvt*color12: #0000ff
-URxvt*color13: #ff00ff
-URxvt*color14: #00cdcd
-URxvt*color15: #ffffff
-URxvt*colorBD: #4cf1e1
-URxvt*saveLines: 0
+URxvt.foreground: #fffaf5
+URxvt.background: #101321
+URxvt.cursorColor: #ff261d
+URxvt.colorBD: #adaba9
+URxvt.highlightColor: #00374b
+URxvt.highlightTextColor: #feffff
+
+/* black */
+URxvt.color0: #2e2e2e
+URxvt.color8: #555555
+
+/* red */
+URxvt.color1: #ff260d
+URxvt.color9: #ff4250
+
+/* green */
+URxvt.color2: #9ae204
+URxvt.color10: #b8e36d
+
+/* yellow */
+URxvt.color3: #ffc400
+URxvt.color11: #ffd852
+
+/* blue */
+URxvt.color4: #00a1f9
+URxvt.color12: #00a5ff
+
+/* magenta */
+URxvt.color5: #805bb5
+URxvt.color13: #ab7aef
+
+/* cyan */
+URxvt.color6: #00ddef
+URxvt.color14: #74fcf3
+
+/* white */
+URxvt.color7: #feffff
+URxvt.color15: #feffff
+
+URxvt.saveLines: 0

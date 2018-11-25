@@ -1,6 +1,7 @@
 # vim: ft=i3 expandtab:
 
 set $mod Mod1
+font pango:Fira Code 9
 exec --no-startup-id ~/.dotfiles/bin/randombg
 exec --no-startup-id nm-applet
 
