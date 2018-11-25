@@ -9,7 +9,7 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -e tmux new-session -A -s ben
+bindsym $mod+Return exec urxvtcd -e tmux new-session -A -s ben
 bindsym $mod+f exec firefox
 
 # kill focused window
