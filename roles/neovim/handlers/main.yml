@@ -1,3 +1,5 @@
 ---
 - name: PlugInstall
   shell: "nvim --headless +PlugInstall +qall!"
+- name: InstallYouCompleteMe
+  shell: "cd ~/.local/share/nvim/plugged/YouCompleteMe && ./install.py --go-completer --js-completer --java-completer"

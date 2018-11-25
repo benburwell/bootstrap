@@ -6,3 +6,6 @@
   copy: src=i3config dest=~/.config/i3/config
 - name: Install i3 statusbar
   copy: src=i3status dest=~/.i3status.conf
+- name: Install network manager GUI
+  become: true
+  apt: name=nm-tray state=present

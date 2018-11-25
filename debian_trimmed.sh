@@ -21,7 +21,6 @@ sudo apt install -y \
   shellcheck \
   software-properties-common \
   stow \
-  sudo \
   texlive \
   tmux \
   transmission \
