@@ -16,7 +16,7 @@ if [[ $(uname) == "FreeBSD" ]]; then
   alias ll="ls -lGh"
   alias ls="ls -Gh"
 fi
-if [[ $(uname -a | grep Ubuntu) ]]; then
+if [[ $(uname -a | grep Ubuntu) || $(uname -a | grep Debian) ]]; then
   alias l="ls -lah --color"
   alias la="ls -la --color"
   alias ll="ls -l --color"
