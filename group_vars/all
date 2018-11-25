@@ -2,4 +2,28 @@
 #aws_access_key: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
 #aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
 
+terminal_foreground_color: '#fffaf5'
+terminal_background_color: '#101321'
+terminal_cursor_color: '#ff261d'
+terminal_bold_color: '#adaba9'
+terminal_highlight_color: '#00374b'
+terminal_highlight_text_color: '#feffff'
+terminal_black_color: '#2e2e2e'
+terminal_bright_black_color: '#555555'
+terminal_red_color: '#ff260d'
+terminal_bright_red_color: '#ff4250'
+terminal_green_color: '#9ae204'
+terminal_bright_green_color: '#b8e36d'
+terminal_yellow_color: '#ffc400'
+terminal_bright_yellow_color: '#ffd852'
+terminal_blue_color: '#00a1f9'
+terminal_bright_blue_color: '#00a5ff'
+terminal_magenta_color: '#805bb5'
+terminal_bright_magenta_color: '#ab7aef'
+terminal_cyan_color: '#00ddef'
+terminal_bright_cyan_color: '#74fcf3'
+terminal_white_color: '#feffff'
+terminal_bright_white_color: '#feffff'
+
+
 # vim: ft=yaml

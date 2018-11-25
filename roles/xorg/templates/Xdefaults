@@ -1,52 +1,30 @@
-/*
- * {{ansible_managed}}
- *
- * vim: ft=xdefaults
- */
+! {{ansible_managed}}
+!
+! vim: ft=xdefaults
 
-URxvt.font: xft:Fira Code:pixelsize=14:style=regular
 URxvt.boldFont: xft:Fira Code:pixelsize=14:style=bold
+URxvt.font: xft:Fira Code:pixelsize=14:style=regular
 URxvt.letterSpace: -1
-
-/* colors are from the ENCOM theme for iTerm2: */
-/* https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/Xresources/ENCOM */
-URxvt.foreground: #fffaf5
-URxvt.background: #101321
-URxvt.cursorColor: #ff261d
-URxvt.colorBD: #adaba9
-URxvt.highlightColor: #00374b
-URxvt.highlightTextColor: #feffff
-
-/* black */
-URxvt.color0: #2e2e2e
-URxvt.color8: #555555
-
-/* red */
-URxvt.color1: #ff260d
-URxvt.color9: #ff4250
-
-/* green */
-URxvt.color2: #9ae204
-URxvt.color10: #b8e36d
-
-/* yellow */
-URxvt.color3: #ffc400
-URxvt.color11: #ffd852
-
-/* blue */
-URxvt.color4: #00a1f9
-URxvt.color12: #00a5ff
-
-/* magenta */
-URxvt.color5: #805bb5
-URxvt.color13: #ab7aef
-
-/* cyan */
-URxvt.color6: #00ddef
-URxvt.color14: #74fcf3
-
-/* white */
-URxvt.color7: #feffff
-URxvt.color15: #feffff
-
+URxvt.background: {{terminal_background_color}}
+URxvt.foreground: {{terminal_foreground_color}}
+URxvt.cursorColor: {{terminal_cursor_color}}
+URxvt.highlightColor: {{terminal_highlight_color}}
+URxvt.highlightTextColor: {{terminal_highlight_text_color}}
+URxvt.color0: {{terminal_black_color}}
+URxvt.color1: {{terminal_red_color}}
+URxvt.color2: {{terminal_green_color}}
+URxvt.color3: {{terminal_yellow_color}}
+URxvt.color4: {{terminal_blue_color}}
+URxvt.color5: {{terminal_magenta_color}}
+URxvt.color6: {{terminal_cyan_color}}
+URxvt.color7: {{terminal_white_color}}
+URxvt.color8: {{terminal_bright_black_color}}
+URxvt.color9: {{terminal_bright_red_color}}
+URxvt.color10: {{terminal_bright_green_color}}
+URxvt.color11: {{terminal_bright_yellow_color}}
+URxvt.color12: {{terminal_bright_blue_color}}
+URxvt.color13: {{terminal_bright_magenta_color}}
+URxvt.color14: {{terminal_bright_cyan_color}}
+URxvt.color15: {{terminal_bright_white_color}}
+URxvt.colorBD: {{terminal_bold_color}}
 URxvt.saveLines: 0
