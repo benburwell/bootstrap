@@ -45,10 +45,6 @@ chsh --shell="$(which zsh)"
 git --git-dir=~/.dotfiles --work-tree=~/.dotfiles remote set-url origin git@github.com/benburwell/dotfiles.git
 cd ~/.dotfiles && stow .
 
-# golang
-PATH="$PATH:/usr/local/go/bin"
-GOPATH="$HOME/code"
-
 # docker & java
 curl \
   --fail \
