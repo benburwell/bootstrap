@@ -4,3 +4,6 @@
   apt: name=xorg state=present
 - name: Install Xdefaults
   template: src=Xdefaults dest=~/.Xdefaults
+- name: Install Fira Code
+  become: true
+  apt: name=fonts-firacode
