@@ -11,6 +11,7 @@
     - lynx
     - pip
     - neovim
+    - curl
 #    - sysadmin
 #    - gpg
 #    - pass

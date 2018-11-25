@@ -1,18 +1,11 @@
 #!/bin/bash
 
-# enable contrib repositories
-sudo sed -i -E "s/main$/main contrib/" /etc/apt/sources.list
-
 sudo apt update
 sudo apt install -y \
-  apt-transport-https \
   build-essential \
   ca-certificates \
   cmake \
-  curl \
-  dirmngr \
   exuberant-ctags \
-  fonts-firacode \
   gnucash \
   irssi \
   jq \
