@@ -44,14 +44,6 @@ ssh-add ~/.ssh/id_rsa
 chsh --shell="$(which zsh)"
 git --git-dir=~/.dotfiles --work-tree=~/.dotfiles remote set-url origin git@github.com/benburwell/dotfiles.git
 cd ~/.dotfiles && stow .
-mkdir -p ~/code/src
-cat <<EOF > ~/.localrc
-# vim: :set ft=zsh:
-export PROJECTS=~/code
-export VIRTYX_DIR=~/code/src/github.com/virtyx-technologies
-export GITHUB_TOKEN=
-export PASSWORD_STORE_GENERATED_LENGTH=
-EOF
 
 # golang
 PATH="$PATH:/usr/local/go/bin"

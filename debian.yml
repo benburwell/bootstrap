@@ -3,6 +3,7 @@
   connection: local
   roles:
     - zsh
+    - localuser
     - apt
     - xorg
     - i3

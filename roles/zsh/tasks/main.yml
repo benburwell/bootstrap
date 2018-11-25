@@ -14,6 +14,8 @@
     - path.zsh
     - prompt.zsh
     - window.zsh
+- file: path=~/code state=directory
+- file: path=~/code/src state=directory
 # - name: Install FZF
 #   homebrew:
 #     name: fzf
