@@ -1,4 +1,8 @@
-export GOPATH=$PROJECTS
+export PROJECTS=~/code
+export VIRTYX_DIR="$PROJECTS/src/github.com/virtyx-technologies"
+export GITHUB_TOKEN=
+export PASSWORD_STORE_GENERATED_LENGTH=
+export GOPATH="$PROJECTS"
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 export EDITOR=nvim
