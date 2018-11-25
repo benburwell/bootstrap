@@ -7,6 +7,6 @@
 - name: Enable sid contrib repository
   become: true
   apt_repository:
-    repo: deb http://ftp.us.debian.org/debian/ sid main contrib
+    repo: deb https://ftp.us.debian.org/debian/ sid main contrib
     state: present
     update_cache: yes
