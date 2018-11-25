@@ -1,12 +1,23 @@
 ---
+- name: check if go is installed
+  command: which go
+  register: go_task_installed
+  changed_when: no
+  failed_when: no
 - homebrew:
     name: go
     state: present
-  when: ansible_facts['system'] == "Darwin"
+  when: go_task_installed is defined and
+        go_task_installed.rc is defined and
+        go_task_installed.rc != 0 and
+        ansible_facts['system'] == "Darwin"
 - unarchive:
     src: https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
     dest: /usr/local
     remote_src: yes
   become: true
-  when: ansible_facts['system'] == "Linux"
+  when: go_task_installed is defined and
+        go_task_installed.rc is defined and
+        go_task_installed.rc != 0 and
+        ansible_facts['system'] == "Linux"
 

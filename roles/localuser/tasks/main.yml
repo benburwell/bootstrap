@@ -1,10 +1,4 @@
 ---
-- name: Ensure zsh is installed
-  package:
-    name: zsh
-    state: present
 - name: Configure bb user account
-  user:
-    name: bb
-    state: present
-    shell: /bin/zsh
+  become: yes
+  user: name=bb state=present shell=/bin/zsh

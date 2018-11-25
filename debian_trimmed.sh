@@ -54,13 +54,6 @@ export PASSWORD_STORE_GENERATED_LENGTH=
 EOF
 
 # golang
-curl \
-  --fail \
-  --location \
-  --silent \
-  --output /tmp/go.tar.gz \
-  https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf /tmp/go.tar.gz
 PATH="$PATH:/usr/local/go/bin"
 GOPATH="$HOME/code"
 
