@@ -1,3 +1,5 @@
 ---
 - apt: name=rxvt-unicode-256color state=present
   become: true
+- apt: name=ncurses-term state=present
+  become: true
