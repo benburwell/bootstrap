@@ -1,0 +1,12 @@
+---
+- name: install ssh server
+  become: yes
+  apt:
+    name: openssh-server
+    state: present
+- name: ensure ssh server is running
+  become: yes
+  systemd:
+    name: sshd
+    state: started
+    enabled: yes

@@ -15,6 +15,7 @@
     - golang
     - neovim
     - curl
+    - ssh-server
 #    - sysadmin
 #    - gpg
 #    - pass
