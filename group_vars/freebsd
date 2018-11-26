@@ -1,0 +1,7 @@
+---
+# vim: ft=yaml
+
+ansible_python_interpreter: 'limits -n 256 /usr/local/bin/python'
+
+# sudoers.d location
+sudoers_d: /usr/local/etc/sudoers.d

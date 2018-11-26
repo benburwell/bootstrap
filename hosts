@@ -1,0 +1,14 @@
+apollo ansible_user=bb
+10.0.0.101 ansible_user=bb
+
+[dataservers]
+apollo
+
+[workstations]
+10.0.0.101
+
+[freebsd]
+apollo
+
+[debian]
+10.0.0.101

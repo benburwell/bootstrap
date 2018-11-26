@@ -25,5 +25,9 @@ terminal_bright_cyan_color: '#74fcf3'
 terminal_white_color: '#feffff'
 terminal_bright_white_color: '#feffff'
 
+# which network clients are allowed to access the nfs share?
+nfs_client_network: "10.0.0.0"
+nfs_client_netmask: "255.255.0.0"
 
-# vim: ft=yaml
+# sudoers.d location
+sudoers_d: /etc/sudoers.d

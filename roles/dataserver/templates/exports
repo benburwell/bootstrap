@@ -1,0 +1,2 @@
+# {{ansible_managed}}
+/data -mapall=nobody -network {{nfs_client_network}} -mask {{nfs_client_netmask}}

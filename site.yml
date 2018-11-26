@@ -1,0 +1,28 @@
+---
+- name: Passwordless sudo
+  hosts: all
+  become: yes
+  roles:
+    - passwordless-sudo
+- name: Configure workstations
+  hosts: workstations
+  roles:
+    - zsh
+    - localuser
+    - apt
+    - xorg
+    - i3
+    - urxvt
+    - tmux
+    - firefox
+    - lynx
+    - pip
+    - golang
+    - neovim
+    - curl
+    - ssh-server
+- name: Configure NFS share
+  hosts: dataservers
+  become: yes
+  roles:
+    - dataserver
