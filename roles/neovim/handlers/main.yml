@@ -1,5 +1,9 @@
 ---
+# TODO: add --java-completer
 - name: PlugInstall
   shell: "nvim --headless +PlugInstall +qall!"
 - name: InstallYouCompleteMe
-  shell: "cd ~/.local/share/nvim/plugged/YouCompleteMe && ./install.py --go-completer --js-completer --java-completer"
+  shell: |
+    export PATH=$PATH:/usr/local/go/bin
+    cd ~/.local/share/nvim/plugged/YouCompleteMe
+    ./install.py --go-completer

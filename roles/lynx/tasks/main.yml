@@ -4,6 +4,10 @@
 - apt: name=lynx state=present
   become: true
   when: ansible_facts['system'] == "Linux"
-- copy: src=lynxrc dest=~/.lynxrc
-- copy: src=lynx.cfg dest=~/.lynx.cfg
-- copy: src=lynx.lss dest=~/.lynx.lss
+- copy:
+    src: '{{item}}'
+    dest: '~/.{{item}}'
+  loop:
+    - lynxrc
+    - lynx.cfg
+    - lynx.lss

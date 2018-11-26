@@ -31,3 +31,6 @@ nfs_client_netmask: "255.255.0.0"
 
 # sudoers.d location
 sudoers_d: /etc/sudoers.d
+
+# which debian release are we on
+debian_release: stretch

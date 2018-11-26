@@ -21,6 +21,7 @@
     - neovim
     - curl
     - ssh-server
+    - docker
 - name: Configure NFS share
   hosts: dataservers
   become: yes

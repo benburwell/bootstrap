@@ -1,15 +1,44 @@
 ---
-- name: Install Docker
-  homebrew_cask:
+- name: docker apt key
+  become: true
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+- name: docker apt repository
+  become: true
+  apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/debian {{debian_release}} stable'
+    state: present
+    update_cache: yes
+- name: install docker
+  become: true
+  apt:
+    name: docker-ce
+    state: present
+- name: ensure docker is running
+  become: true
+  systemd:
     name: docker
-    state: present
+    state: started
+    enabled: yes
+- name: add bb to docker group
+  become: true
+  user:
+    name: bb
+    groups: docker
+    append: yes
 
-- name: Install ctop
-  homebrew:
-    name: ctop
-    state: present
-
-- name: Install Kubernetes CLI
-  homebrew:
-    name: kubernetes-cli
-    state: present
+#- name: Install Docker
+#  homebrew_cask:
+#    name: docker
+#    state: present
+#
+#- name: Install ctop
+#  homebrew:
+#    name: ctop
+#    state: present
+#
+#- name: Install Kubernetes CLI
+#  homebrew:
+#    name: kubernetes-cli
+#    state: present

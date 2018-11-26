@@ -2,31 +2,22 @@
 
 sudo apt update
 sudo apt install -y \
-  build-essential \
   ca-certificates \
-  cmake \
   exuberant-ctags \
   gnucash \
   irssi \
   jq \
   maven \
   mutt \
-  network-manager-openvpn-gnome \
   oathtool \
-  openvpn \
   pass \
   postgresql-client \
-  python-dev \
-  python3-dev \
   shellcheck \
-  software-properties-common \
   stow \
   texlive \
-  tmux \
   transmission \
   wget \
-  wireshark \
-  zsh
+  wireshark
 
 # SSH and GPG keys
 KEYS=/media/ben/FW
@@ -41,28 +32,11 @@ chmod 600 ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa.pub
 ssh-add ~/.ssh/id_rsa
 
-chsh --shell="$(which zsh)"
-git --git-dir=~/.dotfiles --work-tree=~/.dotfiles remote set-url origin git@github.com/benburwell/dotfiles.git
-cd ~/.dotfiles && stow .
-
-# docker & java
-curl \
-  --fail \
-  --location \
-  --silent \
-  --output /tmp/docker_gpg \
-  https://download.docker.com/linux/debian/gpg
-sudo apt-key add /tmp/docker_gpg
-rm /tmp/docker_gpg
-echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
+# java
 echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/java.list
 echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list.d/java.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-sudo apt update
-sudo apt install -y docker-ce oracle-java8-installer
-sudo systemctl start docker # start now
-sudo systemctl enable docker # start at boot
-sudo usermod -a -G docker "$USER"
+sudo apt install -y oracle-java8-installer
 
 # nodejs
 mkdir -p ~/.nvm
@@ -76,20 +50,6 @@ curl \
 . ~/.nvm/nvm.sh
 nvm install node
 npm install --global typescript
-
-# neovim
-sudo pip install neovim
-curl \
-  --fail \
-  --location \
-  --silent \
-  --create-dirs \
-  --output ~/.local/share/nvim/site/autoload/plug.vim \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim --headless +PlugInstall +qall!
-cd ~/.local/share/nvim/plugged/YouCompleteMe || exit
-export PATH=$PATH:/usr/local/go/bin
-./install.py --go-completer --js-completer --java-completer
 
 # fzf
 go get -u github.com/junegunn/fzf

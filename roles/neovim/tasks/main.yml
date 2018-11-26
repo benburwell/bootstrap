@@ -1,15 +1,35 @@
 ---
 - homebrew: name=neovim state=present
   when: ansible_facts['system'] == "Darwin"
-- apt: name=neovim state=present
+- apt:
+    name: '{{item}}'
+    state: present
+  loop:
+    - neovim
+    - cmake
+    - python-dev
+    - python3-dev
+    - build-essential
+    - software-properties-common
   become: true
   when: ansible_facts['system'] == "Linux"
-- pip: name=neovim state=present
+- pip:
+    name: neovim
+    state: present
   become: true
-- file: path=~/.config/nvim state=directory
-- copy: src=vimrc dest=~/.config/nvim/init.vim
-- file: src=~/.config/nvim/init.vim dest=~/.vimrc state=link
-- file: path=~/.local/share/nvim/site/autoload state=directory
+- file:
+    path: ~/.config/nvim
+    state: directory
+- copy:
+    src: vimrc
+    dest: ~/.config/nvim/init.vim
+- file:
+    src: ~/.config/nvim/init.vim
+    dest: ~/.vimrc
+    state: link
+- file:
+    path: ~/.local/share/nvim/site/autoload
+    state: directory
 - get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: ~/.local/share/nvim/site/autoload/plug.vim
