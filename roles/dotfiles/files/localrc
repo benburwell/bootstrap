@@ -1,5 +1,0 @@
-# vim: ft=zsh:
-export PROJECTS=~/code
-export VIRTYX_DIR=~/code/src/github.com/virtyx-technologies
-export GITHUB_TOKEN=
-export PASSWORD_STORE_GENERATED_LENGTH=

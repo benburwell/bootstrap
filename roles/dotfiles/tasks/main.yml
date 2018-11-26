@@ -1,9 +1,0 @@
----
-- name: Clone dotfiles repository
-  git:
-    repo: git@github.com/benburwell/dotfiles.git
-    dest: "{{ lookup('env', 'HOME') }}/code/src/github.com/benburwell/dotfiles"
-- name: Stow dotfiles into home directory
-  shell: "stow --dir={{lookup('env', 'HOME')}}/code/src/github.com/benburwell/dotfiles --target={{lookup('env', 'HOME')}} --verbose"
-- name: Initialize .localrc
-  copy: src=localrc dest={{lookup('env', 'HOME')}}/.localrc
