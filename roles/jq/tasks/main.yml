@@ -1,0 +1,17 @@
+---
+- name: Install jq
+  become: true
+  apt:
+    name: jq
+    state: present
+- name: jq directory
+  file:
+    path: '~/.jq'
+    state: directory
+    mode: '700'
+- name: jq library
+  copy:
+    src: '{{item}}'
+    dest: '~/.jq/{{item}}'
+  loop:
+    - aws.jq

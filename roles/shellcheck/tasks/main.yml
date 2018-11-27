@@ -1,0 +1,6 @@
+---
+- name: ensure shellcheck is installed
+  become: true
+  apt:
+    name: shellcheck
+    state: present

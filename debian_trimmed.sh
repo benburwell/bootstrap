@@ -6,14 +6,11 @@ sudo apt install -y \
   exuberant-ctags \
   gnucash \
   irssi \
-  jq \
   maven \
   mutt \
   oathtool \
   pass \
   postgresql-client \
-  shellcheck \
-  stow \
   texlive \
   transmission \
   wget \

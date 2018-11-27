@@ -22,6 +22,8 @@
     - curl
     - ssh-server
     - docker
+    - shellcheck
+    - jq
 - name: Configure NFS share
   hosts: dataservers
   become: yes
