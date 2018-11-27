@@ -1,6 +1,10 @@
 ---
+# vim: ft=yaml
+
 #aws_access_key: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
 #aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
+aws_access_key: TEST KEY
+aws_secret_access_key: DEMO KEY
 
 terminal_foreground_color: '#fffaf5'
 terminal_background_color: '#101321'
@@ -34,3 +38,35 @@ sudoers_d: /etc/sudoers.d
 
 # which debian release are we on
 debian_release: stretch
+
+ngrok_auth_token: token
+
+maven_servers:
+  - username: ben
+    password: pass
+    id: central
+  - username: ben
+    password: pass
+    id: snapshots
+maven_profiles:
+  - id: artifactory
+    repositories:
+      - id: central
+        snapshots_enabled: false
+        name: libs-release
+        url: https://maven.virtyx.com/artifactory/libs-release
+      - id: snapshots
+        snapshots_enabled: true
+        name: libs-snapshot
+        url: https://maven.virtyx.com/artifactory/libs-snapshot
+    plugin_repositories:
+      - id: central
+        snapshots_enabled: false
+        name: plugins-release
+        url: https://maven.virtyx.com/artifactory/plugins-release
+      - id: snapshots
+        snapshots_enabled: true
+        name: plugins-snapshot
+        url: https://maven.virtyx.com/artifactory/plugins-snapshot
+maven_active_profiles:
+  - artifactory

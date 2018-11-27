@@ -1,13 +1,37 @@
 ---
-- name: Install Java
-  homebrew_cask:
-    name: java
+- name: java jdk
+  become: yes
+  apt:
+    name: openjdk-8-jdk
     state: present
-- name: Install Maven
-  homebrew:
-    name: maven
-    state: present
-- name: Install google-java-format
-  homebrew:
-    name: google-java-format
-    state: present
+#- name: Java key
+#  become: yes
+#  apt_key:
+#    keyserver: keyserver.ubuntu.com
+#    id: EEA14886
+#    state: present
+
+#  homebrew_cask:
+#    name: java
+#    state: present
+#- name: Install Maven
+#  homebrew:
+#    name: maven
+#    state: present
+- name: google-java-format directory
+  become: yes
+  file:
+    path: /usr/local/opt/google-java-format/libexec
+    state: directory
+    mode: '755'
+- name: google-java-format jar
+  become: true
+  get_url:
+    url: https://github.com/google/google-java-format/releases/download/google-java-format-1.6/google-java-format-1.6-all-deps.jar
+    dest: /usr/local/opt/google-java-format/libexec/google-java-format-1.6-all-deps.jar
+- name: google-java-format script
+  become: true
+  copy:
+    src: google-java-format
+    dest: /usr/local/bin/google-java-format
+    mode: '755'

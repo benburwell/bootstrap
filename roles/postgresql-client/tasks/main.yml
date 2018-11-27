@@ -1,0 +1,12 @@
+---
+- name: install psql
+  become: true
+  apt:
+    name: postgresql-client
+    state: present
+- name: pgpass file
+  template:
+    src: pgpass.j2
+    dest: '~/.pgpass'
+    mode: '600'
+

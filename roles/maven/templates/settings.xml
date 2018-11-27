@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- {{ansible_managed}} -->
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+{% for server in maven_servers %}
+    <server>
+      <username>{{server.username}}</username>
+      <password>{{server.password}}</password>
+      <id>{{server.id}}</id>
+    </server>
+{% endfor %}
+  </servers>
+  <profiles>
+{% for profile in maven_profiles %}
+    <profile>
+      <repositories>
+{% for repository in profile.repositories %}
+        <repository>
+{% if repository.snapshots_enabled %}
+          <snapshots />
+{% else %}
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+{% endif %}
+          <id>{{repository.id}}</id>
+          <name>{{repository.name}}</name>
+          <url>{{repository.url}}</url>
+        </repository>
+{% endfor %}
+      </repositories>
+      <pluginRepositories>
+{% for plugin_repository in profile.plugin_repositories %}
+        <pluginRepository>
+{% if plugin_repository.snapshots_enabled %}
+          <snapshots />
+{% else %}
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+{% endif %}
+          <id>{{plugin_repository.id}}</id>
+          <name>{{plugin_repository.name}}</name>
+          <url>{{plugin_repository.url}}</url>
+        </pluginRepository>
+{% endfor %}
+      </pluginRepositories>
+      <id>{{profile.id}}</id>
+    </profile>
+{% endfor %}
+  </profiles>
+  <activeProfiles>
+{% for active_profile in maven_active_profiles %}
+    <activeProfile>{{active_profile}}</activeProfile>
+{% endfor %}
+  </activeProfiles>
+</settings>

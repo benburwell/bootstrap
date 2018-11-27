@@ -1,0 +1,16 @@
+---
+- name: install maven
+  become: true
+  apt:
+    name: maven
+    state: present
+- name: m2 folder
+  file:
+    path: ~/.m2
+    state: directory
+    mode: '700'
+- name: settings.xml
+  template:
+    src: settings.xml
+    dest: ~/.m2/settings.xml
+    mode: '600'

@@ -1,11 +1,16 @@
 ---
 - name: Install awscli
+  become: true
   pip:
     name: awscli
     state: present
+- name: Create AWS directory
+  file:
+    path: '~/.aws'
+    state: directory
+    mode: '700'
 - name: Create credentials file
-  template: src=credential dest={{lookup('env', 'HOME')}}/.aws/credentials
-- name: Install s3cmd
-  homebrew:
-    name: s3cmd
-    state: present
+  template:
+    src: credentials.j2
+    dest: '~/.aws/credentials'
+    mode: '600'

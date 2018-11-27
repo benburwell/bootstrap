@@ -1,0 +1,24 @@
+---
+- name: unzip dependency
+  become: true
+  apt:
+    name: unzip
+    state: present
+- name: ngrok binary
+  become: true
+  unarchive:
+    remote_src: yes
+    src: https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    dest: /usr/local/bin
+    creates: /usr/local/bin/ngrok
+    mode: '755'
+- name: ngrok config directory
+  file:
+    path: ~/.ngrok2
+    state: directory
+    mode: '700'
+- name: ngrok configuration
+  template:
+    src: ngrok.yml.j2
+    dest: ~/.ngrok2/ngrok.yml
+    mode: '600'
