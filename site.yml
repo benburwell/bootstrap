@@ -24,8 +24,23 @@
     - docker
     - shellcheck
     - jq
+    - aws
+    - postgresql-client
+    - java
+    - ngrok
+    - maven
+    - fzf
+    - ripgrep
 - name: Configure NFS share
   hosts: dataservers
   become: yes
   roles:
     - dataserver
+
+# TODO
+#comm
+#gpg
+#iterm2
+#nodejs
+#pass
+#sysadmin

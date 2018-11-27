@@ -1,5 +1,0 @@
----
-- name: Install GnuCash
-  homebrew_cask:
-    name: gnucash
-    state: present

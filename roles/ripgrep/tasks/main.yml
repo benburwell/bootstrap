@@ -1,0 +1,11 @@
+---
+- name: check for ripgrep
+  shell: which rg
+  register: rg_check
+  changed_when: no
+  failed_when: no
+- name: ripgrep
+  become: yes
+  when: rg_check is defined and rg_check.rc is defined and rg_check.rc != 0
+  apt:
+    deb: https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb

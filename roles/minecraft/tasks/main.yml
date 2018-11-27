@@ -1,5 +1,0 @@
----
-- name: Install Minecraft
-  homebrew_cask:
-    name: minecraft
-    state: present

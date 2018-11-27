@@ -1,8 +1,4 @@
 ---
-- name: Install Neovim
-  homebrew:
-    name: neovim
-    state: present
 - name: Install git and hub
   homebrew:
     name:

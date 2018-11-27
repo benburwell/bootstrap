@@ -1,5 +1,0 @@
----
-- name: Install Chromium
-  homebrew_cask:
-    name: chromium
-    state: present

@@ -40,18 +40,6 @@ curl \
 nvm install node
 npm install --global typescript
 
-# fzf
-go get -u github.com/junegunn/fzf
-
-# ripgrep
-curl \
-  --location \
-  --fail \
-  --output /tmp/ripgrep_0.8.1_amd64.deb \
-  https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
-sudo dpkg -i /tmp/ripgrep_0.8.1_amd64.deb
-rm -f /tmp/ripgrep_0.8.1_amd64.deb
-
 # pass-otp
 mkdir -p ~/code/src/github.com/tadfisher
 git clone git@github.com:tadfisher/pass-otp.git ~/code/src/github.com/tadfisher/pass-otp
@@ -88,5 +76,3 @@ curl \
   https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb
 sudo dpkg -i /tmp/slack.deb
 rm -f /tmp/slack.deb
-
-# TODO: openvpn

@@ -1,0 +1,6 @@
+---
+- name: go get fzf
+  shell: GOPATH=~/code PATH=$PATH:/usr/local/go/bin go get -u github.com/junegunn/fzf
+  args:
+    creates: ~/code/src/github.com/junegunn/fzf
+
