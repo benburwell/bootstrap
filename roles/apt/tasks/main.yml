@@ -1,9 +1,4 @@
 ---
-- name: Use https for apt repositories
-  become: true
-  apt:
-    name: apt-transport-https
-    state: present
 - name: Enable sid contrib repository
   become: true
   apt_repository:

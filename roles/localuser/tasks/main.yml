@@ -1,4 +1,7 @@
 ---
 - name: Configure bb user account
   become: yes
-  user: name=bb state=present shell=/bin/zsh
+  user:
+    name: bb
+    state: present
+    shell: /bin/zsh

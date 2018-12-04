@@ -1,0 +1,5 @@
+---
+# vim: ft=yaml
+
+# the group that sudo uses by default
+sudoers_group: sudo

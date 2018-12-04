@@ -4,23 +4,39 @@
   become: yes
   roles:
     - passwordless-sudo
-- name: Configure workstations
+- name: SSH server
+  hosts: all
+  roles:
+    - ssh-server
+- name: Workstation OS and user
   hosts: workstations
   roles:
     - zsh
     - localuser
-    - apt
-    - xorg
-    - i3
-    - urxvt
-    - tmux
+    - role: apt
+      when: ansible_facts['os_family'] == 'Debian'
+- name: Linux desktop environment
+  hosts: workstations
+  roles:
+    - role: xorg
+      when: ansible_facts['system'] == 'Linux'
+    - role: i3
+      when: ansible_facts['system'] == 'Linux'
+    - role: urxvt
+      when: ansible_facts['system'] == 'Linux'
+- name: GUI programs
+  hosts: workstations
+  roles:
     - firefox
+- name: Development tools
+  hosts: workstations
+  roles:
+    - tmux
     - lynx
     - pip
     - golang
     - neovim
     - curl
-    - ssh-server
     - docker
     - shellcheck
     - jq

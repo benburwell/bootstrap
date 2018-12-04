@@ -1,14 +1,18 @@
 apollo ansible_user=bb
-10.0.0.101 ansible_user=bb
+127.0.0.1 ansible_connection=local
+10.0.0.19 ansible_user=bb
 
 [dataservers]
 apollo
 
 [workstations]
-10.0.0.101
+10.0.0.19
 
 [freebsd]
 apollo
 
 [debian]
-10.0.0.101
+10.0.0.19
+
+[darwin]
+127.0.0.1

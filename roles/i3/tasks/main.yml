@@ -1,11 +1,20 @@
 ---
 - name: Install i3
   become: true
-  apt: name=i3 state=present
+  apt:
+    name: i3
+    state: present
+- file:
+    path: ~/.config
+    state: directory
+- file:
+    path: ~/.config/i3
+    state: directory
 - name: Install i3 configuration
-  copy: src=i3config dest=~/.config/i3/config
+  copy:
+    src: i3config
+    dest: ~/.config/i3/config
 - name: Install i3 statusbar
-  copy: src=i3status dest=~/.i3status.conf
-- name: Install network manager GUI
-  become: true
-  apt: name=nm-tray state=present
+  copy:
+    src: i3status
+    dest: ~/.i3status.conf
