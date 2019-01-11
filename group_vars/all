@@ -42,31 +42,39 @@ debian_release: stretch
 ngrok_auth_token: token
 
 maven_servers:
-  - username: ben
-    password: pass
-    id: central
-  - username: ben
-    password: pass
-    id: snapshots
+- username: ben
+  password: pass
+  id: central
+- username: ben
+  password: pass
+  id: snapshots
 maven_profiles:
-  - id: artifactory
-    repositories:
-      - id: central
-        snapshots_enabled: false
-        name: libs-release
-        url: https://maven.virtyx.com/artifactory/libs-release
-      - id: snapshots
-        snapshots_enabled: true
-        name: libs-snapshot
-        url: https://maven.virtyx.com/artifactory/libs-snapshot
-    plugin_repositories:
-      - id: central
-        snapshots_enabled: false
-        name: plugins-release
-        url: https://maven.virtyx.com/artifactory/plugins-release
-      - id: snapshots
-        snapshots_enabled: true
-        name: plugins-snapshot
-        url: https://maven.virtyx.com/artifactory/plugins-snapshot
+- id: artifactory
+  repositories:
+  - id: central
+    snapshots_enabled: false
+    name: libs-release
+    url: https://maven.virtyx.com/artifactory/libs-release
+  - id: snapshots
+    snapshots_enabled: true
+    name: libs-snapshot
+    url: https://maven.virtyx.com/artifactory/libs-snapshot
+  plugin_repositories:
+  - id: central
+    snapshots_enabled: false
+    name: plugins-release
+    url: https://maven.virtyx.com/artifactory/plugins-release
+  - id: snapshots
+    snapshots_enabled: true
+    name: plugins-snapshot
+    url: https://maven.virtyx.com/artifactory/plugins-snapshot
 maven_active_profiles:
-  - artifactory
+- artifactory
+
+minecraft_whitelist:
+- name: xmcp
+  uuid: ee8545dc-e949-4ee8-9d1d-d2817479e84f
+
+minecraft_ops:
+- name: xmcp
+  uuid: ee8545dc-e949-4ee8-9d1d-d2817479e84f
