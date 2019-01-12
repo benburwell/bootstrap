@@ -74,6 +74,8 @@ maven_active_profiles:
 minecraft_whitelist:
 - name: xmcp
   uuid: ee8545dc-e949-4ee8-9d1d-d2817479e84f
+- name: AlotOfAlots
+  uuid: 0ca0fcf7-40a3-47f7-92f2-1070904a6a76
 
 minecraft_ops:
 - name: xmcp
