@@ -1,0 +1,5 @@
+---
+- name: Install Transmission
+  homebrew_cask:
+    name: transmission
+    state: present

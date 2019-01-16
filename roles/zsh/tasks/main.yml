@@ -1,10 +1,9 @@
 ---
-- apt:
+- package:
     name: zsh
     state: present
-  become: yes
-  when: ansible_facts['system'] == "Linux"
-- copy:
+  become: ansible_pkg_mgr != "homebrew"
+- template:
     src: zshrc
     dest: ~/.zshrc
 - file:
@@ -24,9 +23,17 @@
     - path.zsh
     - prompt.zsh
     - window.zsh
-- file:
-    path: ~/code
-    state: directory
-- file:
-    path: ~/code/src
-    state: directory
+- copy:
+    src: 'func_{{item}}.zsh'
+    dest: '~/.zsh/functions/{{item}}.zsh'
+  loop:
+    - dirty
+    - ebdeploy
+    - ec2
+    - ghclone
+    - git-branches
+    - prs
+    - rfc
+    - rp
+    - sheb
+    - track

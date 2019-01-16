@@ -1,6 +1,12 @@
 ---
-- homebrew: name=neovim state=present
-  when: ansible_facts['system'] == "Darwin"
+- homebrew:
+    name: neovim
+    state: present
+  when: ansible_pkg_mgr == "homebrew"
+- homebrew_cask:
+    name: macvim
+    state: present
+  when: ansible_pkg_mgr == "homebrew"
 - apt:
     name: '{{item}}'
     state: present
@@ -12,7 +18,7 @@
     - build-essential
     - software-properties-common
   become: true
-  when: ansible_facts['system'] == "Linux"
+  when: ansible_pkg_mgr == "apt"
 - pip:
     name: neovim
     state: present

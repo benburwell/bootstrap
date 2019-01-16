@@ -1,0 +1,8 @@
+# {{ansible_managed}}
+# vim: ft=gpg
+default-cache-ttl 600
+max-cache-ttl 7200
+{% if gpg_pinentry_program %}
+pinentry-program {{gpg_pinentry_program}}
+{% endif %}
+enable-ssh-support

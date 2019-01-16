@@ -1,15 +1,8 @@
 ---
-- name: Install nvm
+- name: Install node and yarn
   homebrew:
-    name: nvm
+    name:
+      - node
+      - yarn
     state: present
-- name: Install node stable
-  shell: nvm install stable
-- name: Use node stable
-  shell: nvm use stable
-- name: Make node stable the default node
-  shell: nvm alias default stable
-- name: Install yarn
-  homebrew:
-    name: yarn
-    state: present
+  when: ansible_pkg_mgr == "homebrew"

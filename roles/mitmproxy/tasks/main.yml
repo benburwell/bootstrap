@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: mitmproxy
+    state: present

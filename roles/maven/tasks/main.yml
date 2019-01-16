@@ -1,7 +1,7 @@
 ---
 - name: install maven
-  become: true
-  apt:
+  become: ansible_os_family == "Darwin"
+  package:
     name: maven
     state: present
 - name: m2 folder

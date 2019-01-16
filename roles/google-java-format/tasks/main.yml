@@ -1,0 +1,26 @@
+---
+- name: Install google-java-format
+  when: ansible_pkg_mgr == "homebrew"
+  homebrew:
+    name: google-java-format
+    state: present
+- name: google-java-format directory
+  become: yes
+  when: ansible_pkg_mgr != "homebrew"
+  file:
+    path: /usr/local/opt/google-java-format/libexec
+    state: directory
+    mode: '755'
+- name: google-java-format jar
+  become: true
+  when: ansible_pkg_mgr != "homebrew"
+  get_url:
+    url: https://github.com/google/google-java-format/releases/download/google-java-format-1.6/google-java-format-1.6-all-deps.jar
+    dest: /usr/local/opt/google-java-format/libexec/google-java-format-1.6-all-deps.jar
+- name: google-java-format script
+  become: true
+  when: ansible_pkg_mgr != "homebrew"
+  copy:
+    src: google-java-format
+    dest: /usr/local/bin/google-java-format
+    mode: '755'

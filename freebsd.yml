@@ -1,0 +1,36 @@
+---
+- name: Playbook to manage FreeBSD configuration
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: 'limits -n 256 /usr/local/bin/python'
+    sudoers_d: /usr/local/etc/sudoers.d
+    sudoers_group: wheel
+  vars_files:
+    - vars.yml
+  roles:
+    - passwordless-sudo
+    - zsh
+    #- firefox
+    #- tmux
+    #- lynx
+    #- pip
+    #- golang
+    #- neovim
+    #- curl
+    #- docker
+    #- shellcheck
+    #- jq
+    #- aws
+    #- postgresql-client
+    #- java
+    #- ngrok
+    #- maven
+    #- fzf
+    #- ripgrep
+# TODO
+#comm
+#gpg
+#iterm2
+#nodejs
+#pass
+#sysadmin

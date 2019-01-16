@@ -1,6 +1,0 @@
----
-- name: Minecraft Server
-  hosts: minecraft
-  become: yes
-  roles:
-    - minecraft-server

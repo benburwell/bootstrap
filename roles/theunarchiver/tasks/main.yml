@@ -1,0 +1,5 @@
+---
+- name: Install The Unarchiver
+  homebrew_cask:
+    name: the-unarchiver
+    state: present

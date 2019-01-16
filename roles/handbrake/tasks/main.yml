@@ -1,0 +1,9 @@
+---
+- homebrew_cask:
+    name: handbrake
+    state: present
+  when: ansible_pkg_mgr == "homebrew"
+- homebrew:
+    name: libdvdcss
+    state: present
+  when: ansible_pkg_mgr == "homebrew"

@@ -1,0 +1,42 @@
+---
+- name: Playbook to manage Debian configuration
+  hosts: localhost
+  vars:
+    sudoers_group: sudo
+  vars_files:
+    - vars.yml
+  roles:
+    - passwordless-sudo
+    - zsh
+# TODO
+#apt
+#aws
+#curl
+#docker
+#firefox
+#fzf
+#golang
+#gpg
+#i3
+#java
+#jq
+#lynx
+#maven
+#media
+#mutt
+#neovim
+#ngrok
+#nodejs
+#pass
+#passwordless-sudo
+#pip
+#postgresql-client
+#ripgrep
+#shellcheck
+#ssh-server
+#sudo
+#sysadmin
+#tex
+#tmux
+#urxvt
+#xorg

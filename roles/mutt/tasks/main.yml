@@ -1,0 +1,71 @@
+---
+- name: Install email packages
+  when: ansible_pkg_mgr == "homebrew"
+  homebrew:
+    name:
+      - mutt
+      - msmtp
+      - notmuch
+      - offlineimap
+      - vdirsyncer
+      - khard
+      - khal
+    state: present
+- name: muttrc
+  template:
+    src: muttrc
+    dest: ~/.muttrc
+    mode: 0600
+- name: msmtprc
+  copy:
+    src: msmtprc
+    dest: ~/.msmtprc
+    mode: 0600
+- name: offlineimap.py
+  copy:
+    src: offlineimap.py
+    dest: ~/.offlineimap.py
+    mode: 0700
+- name: offlineimaprc
+  copy:
+    src: offlineimaprc
+    dest: ~/.offlineimaprc
+    mode: 0600
+- name: notmuch-config
+  copy:
+    src: notmuch-config
+    dest: ~/.notmuch-config
+    mode: 0600
+- name: vdirsyncer config
+  copy:
+    src: vdirsyncer_config
+    dest: ~/.config/vdirsyncer/config
+    mode: 0600
+- name: khal config
+  copy:
+    src: khal_config
+    dest: ~/.config/khal/config
+    mode: 0600
+- name: khard config
+  copy:
+    src: khard.conf
+    dest: ~/.config/khard/khard.conf
+    mode: 0600
+- name: cron path
+  cron:
+    env: yes
+    name: PATH
+    value: "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin/sbin:/usr/local/go/bin"
+    user: "{{ansible_user_id}}"
+- name: offlineimap cron
+  cron:
+    name: "sync imap"
+    minute: "*/2"
+    job: "offlineimap >> /tmp/offlineimap.log 2>&1"
+    user: "{{ansible_user_id}}"
+- name: vdirsyncer cron
+  cron:
+    name: "sync vdir"
+    minute: "*/2"
+    job: "vdirsyncer -v INFO sync >> /tmp/vdirsyncer.log 2>&1"
+    user: "{{ansible_user_id}}"

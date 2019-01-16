@@ -1,8 +1,25 @@
 ---
 - name: Install packages
+  when: ansible_pkg_mgr == "homebrew"
   homebrew:
     state: present
     name:
       - gpgme
       - gnupg
       - pinentry-mac
+- file:
+    path: ~/.gnupg
+    state: directory
+    mode: 0700
+- template:
+    src: dirmngr.conf.j2
+    dest: ~/.gnupg/dirmngr.conf
+    mode: 0600
+- template:
+    src: gpg-agent.conf.j2
+    dest: ~/.gnupg/gpg-agent.conf
+    mode: 0600
+- template:
+    src: gpg.conf.j2
+    dest: ~/.gnupg/gpg.conf
+    mode: 0600

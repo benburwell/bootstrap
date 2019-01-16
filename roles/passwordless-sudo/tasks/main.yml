@@ -1,11 +1,7 @@
 ---
-- name: Install sudo
-  when: ansible_facts['system'] != "Darwin"
-  package:
-    name: sudo
-    state: present
 - name: Enable passwordless sudo
   when: sudoers_group is defined
+  become: true
   template:
     src: passwordless.j2
     dest: '{{sudoers_d}}/passwordless'

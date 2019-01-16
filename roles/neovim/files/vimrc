@@ -14,13 +14,11 @@ if has("termguicolors")
 endif
 set listchars=tab:›\ ,nbsp:_,trail:·
 set list
-set scrolloff=3
 
 " General file settings
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
-set autoindent
 set smartindent
 set tabstop=2
 set shiftwidth=2
@@ -28,15 +26,12 @@ set softtabstop=2
 set expandtab
 
 set incsearch
-set hlsearch
 set ignorecase
 set smartcase
 set wildignorecase
 set path+=**
 set wildmenu
 set wildmode=longest,list,full
-set foldmethod=syntax
-set foldlevelstart=9999
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
@@ -44,6 +39,8 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Quramy/tsuquyomi', {'for' : 'typescript'}
 Plug 'Shougo/vimproc', {'do' : 'make'}
 Plug 'Valloric/YouCompleteMe', {'do' : './install.py'}
+Plug 'benburwell/blayu.vim'
+Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', {'for' : 'csv'}
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
@@ -61,7 +58,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vito-c/jq.vim'
-Plug 'benburwell/blayu.vim'
 call plug#end()
 
 " Color scheme
@@ -153,11 +149,4 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-q> <C-w>q
-
-" quickly regenerate ctags
-if os == "FreeBSD"
-	command Ctags !exctags .
-else
-	command Ctags !ctags .
-endif
 

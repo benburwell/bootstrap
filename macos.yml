@@ -1,0 +1,56 @@
+---
+- name: Playbook to manage macOS configuration
+  hosts: localhost
+  vars:
+    sudoers_group: admin
+    gpg_pinentry_program: /usr/local/bin/pinentry-mac
+    git_credential_helper: osxkeychain
+  vars_files:
+    - vars.yml
+  roles:
+    - passwordless-sudo
+    - zsh
+    - tmux
+    - lynx
+    - python
+    - golang
+    - neovim
+    - jq
+    - aws
+    - postgresql-client
+    - java
+    - google-java-format
+    - ngrok
+    - maven
+    - fzf
+    - ripgrep
+    - gpg
+    - mutt
+    - ffmpeg
+    - handbrake
+    - vlc
+    - imageoptim
+    - gimp
+    - licecap
+    - appcleaner
+    - nodejs
+    - tex
+    - git
+    - mitmproxy
+    - ctags
+    - clitools
+    - theunarchiver
+    - virtualbox
+    - wireshark
+    - transmission
+    - etcher
+    - viscosity
+    - slack
+    - spotify
+    - docker
+    - yubikey
+# TODO
+#iterm2
+#firefox
+#
+#pass

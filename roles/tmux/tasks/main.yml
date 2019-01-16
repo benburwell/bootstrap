@@ -2,7 +2,24 @@
 - package:
     name: tmux
     state: present
-  become: true
-- copy:
-    src: tmux.conf
+  become: ansible_pkg_mgr != "homebrew"
+- template:
+    src: tmux.conf.j2
     dest: ~/.tmux.conf
+- name: cache directory
+  file:
+    path: ~/.cache
+    state: directory
+    mode: 0700
+- name: cron path
+  cron:
+    env: yes
+    name: PATH
+    value: "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin/sbin:/usr/local/go/bin"
+    user: "{{ansible_user_id}}"
+- name: metar cron
+  cron:
+    name: "fetch weather"
+    minute: "*/5"
+    job: "$HOME/.bin/metar KBOS > $HOME/.cache/metar"
+    user: "{{ansible_user_id}}"

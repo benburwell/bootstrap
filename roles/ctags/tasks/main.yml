@@ -1,0 +1,9 @@
+---
+- name: Install ctags
+  homebrew:
+    name: ctags
+    state: present
+- copy:
+    src: ctags
+    dest: ~/.ctags
+    mode: 0600

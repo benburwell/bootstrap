@@ -1,0 +1,5 @@
+---
+- name: Install ImageOptim
+  homebrew_cask:
+    name: imageoptim
+    state: present

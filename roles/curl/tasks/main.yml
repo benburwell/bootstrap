@@ -1,6 +1,0 @@
----
-- name: Install cURL
-  become: true
-  apt:
-    name: curl
-    state: present

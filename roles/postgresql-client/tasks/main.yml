@@ -1,8 +1,14 @@
 ---
 - name: install psql
+  when: ansible_pkg_mgr == "apt"
   become: true
   apt:
     name: postgresql-client
+    state: present
+- name: install psql
+  when: ansible_pkg_mgr == "homebrew"
+  homebrew:
+    name: "postgresql@9.5"
     state: present
 - name: pgpass file
   template:

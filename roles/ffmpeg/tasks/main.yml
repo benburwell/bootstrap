@@ -1,0 +1,5 @@
+---
+- homebrew:
+    name: ffmpeg
+    state: present
+  when: ansible_pkg_mgr == "homebrew"

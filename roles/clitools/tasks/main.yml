@@ -1,0 +1,14 @@
+---
+- homebrew:
+    state: present
+    name:
+      - ctop
+      - htop
+      - nmap
+      - pandoc
+      - pdftohtml
+      - qemu
+      - shellcheck
+      - sqlite
+      - tree
+      - watch

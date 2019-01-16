@@ -1,9 +1,8 @@
 ---
-- homebrew: name=lynx state=present
-  when: ansible_facts['system'] == "Darwin"
-- apt: name=lynx state=present
-  become: true
-  when: ansible_facts['system'] == "Linux"
+- package:
+    name: lynx
+    state: present
+  become: ansible_pkg_mgr != "homebrew"
 - copy:
     src: '{{item}}'
     dest: '~/.{{item}}'

@@ -1,9 +1,9 @@
 ---
 - name: Install jq
-  become: true
-  apt:
+  package:
     name: jq
     state: present
+  become: ansible_pkg_mgr != "homebrew"
 - name: jq directory
   file:
     path: '~/.jq'

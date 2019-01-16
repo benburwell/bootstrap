@@ -1,0 +1,90 @@
+---
+# vim: ft=yaml 
+aws_access_key: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
+aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
+aws_output: json
+aws_region: us-east-1
+
+
+terminal_foreground_color: '#fffaf5'
+terminal_background_color: '#101321'
+terminal_cursor_color: '#ff261d'
+terminal_bold_color: '#adaba9'
+terminal_highlight_color: '#00374b'
+terminal_highlight_text_color: '#feffff'
+terminal_black_color: '#2e2e2e'
+terminal_bright_black_color: '#555555'
+terminal_red_color: '#ff260d'
+terminal_bright_red_color: '#ff4250'
+terminal_green_color: '#9ae204'
+terminal_bright_green_color: '#b8e36d'
+terminal_yellow_color: '#ffc400'
+terminal_bright_yellow_color: '#ffd852'
+terminal_blue_color: '#00a1f9'
+terminal_bright_blue_color: '#00a5ff'
+terminal_magenta_color: '#805bb5'
+terminal_bright_magenta_color: '#ab7aef'
+terminal_cyan_color: '#00ddef'
+terminal_bright_cyan_color: '#74fcf3'
+terminal_white_color: '#feffff'
+terminal_bright_white_color: '#feffff'
+
+# sudoers.d location
+sudoers_d: /etc/sudoers.d
+
+# which debian release are we on
+debian_release: stretch
+
+ngrok_auth_token: "{{lookup('pipe', 'pass ngrok-token')}}"
+
+maven_servers:
+- username: ben
+  password: "{{lookup('pipe', 'pass virtyx/maven-token')}}"
+  id: central
+- username: ben
+  password: "{{lookup('pipe', 'pass virtyx/maven-token')}}"
+  id: snapshots
+maven_profiles:
+- id: artifactory
+  repositories:
+  - id: central
+    snapshots_enabled: false
+    name: libs-release
+    url: https://maven.virtyx.com/artifactory/libs-release
+  - id: snapshots
+    snapshots_enabled: true
+    name: libs-snapshot
+    url: https://maven.virtyx.com/artifactory/libs-snapshot
+  plugin_repositories:
+  - id: central
+    snapshots_enabled: false
+    name: plugins-release
+    url: https://maven.virtyx.com/artifactory/plugins-release
+  - id: snapshots
+    snapshots_enabled: true
+    name: plugins-snapshot
+    url: https://maven.virtyx.com/artifactory/plugins-snapshot
+maven_active_profiles:
+- artifactory
+
+pgpass:
+  - host: localhost
+    port: 15432
+    db: endpoint_monitoring
+    user: postgres
+    pw: testing
+  - host: localhost
+    port: 5432
+    db: runeflow
+    user: postgres
+    pw: testing
+  - host: localhost
+    port: 25432
+    db: endpoint_monitoring
+    user: virtyx
+    pw: "{{lookup('pipe', 'pass virtyx/proddb | head -n1')}}"
+  - host: localhost
+    port: 35432
+    db: metrics
+    user: virtyx
+    pw: "{{lookup('pipe', 'pass virtyx/metricsdb | head -n1')}}"

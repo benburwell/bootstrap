@@ -1,17 +1,24 @@
 ---
 - name: unzip dependency
   become: true
+  when: ansible_pkg_mgr == "apt"
   apt:
     name: unzip
     state: present
 - name: ngrok binary
   become: true
+  when: ansible_system == "Linux"
   unarchive:
     remote_src: yes
     src: https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     dest: /usr/local/bin
     creates: /usr/local/bin/ngrok
     mode: '755'
+- name: ngrok homebrew
+  when: ansible_system == "Darwin"
+  homebrew_cask:
+    name: ngrok
+    state: present
 - name: ngrok config directory
   file:
     path: ~/.ngrok2

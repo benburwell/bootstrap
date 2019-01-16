@@ -14,3 +14,8 @@
     src: credentials.j2
     dest: '~/.aws/credentials'
     mode: '600'
+- name: Create config file
+  template:
+    src: config.j2
+    dest: '~/.aws/config'
+    mode: '600'
