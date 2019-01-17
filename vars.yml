@@ -1,6 +1,6 @@
 ---
 # vim: ft=yaml 
-aws_access_key: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
+aws_access_key_id: "{{lookup('pipe', 'pass virtyx/aws-access-key')}}"
 aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
 aws_output: json
 aws_region: us-east-1
