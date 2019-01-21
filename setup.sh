@@ -4,6 +4,9 @@ set -e
 echo "[i] Ask for sudo password"
 sudo -v
 
+echo -n "Path to ASCII-armored GPG keys to import: "
+read KEYS
+
 case "$(uname -s)" in
   Darwin)
     playbook="macos.yml"
@@ -19,6 +22,18 @@ case "$(uname -s)" in
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 
+    # install gpg
+    if [[ ! -x /usr/local/bin/gpg ]]; then
+      echo "[i] Install gpg2"
+      brew install gpg2
+    fi
+
+    # import GPG keys
+    echo "[i] Importing GPG keys"
+    for filename in "$KEYS/*.asc"; do
+      gpg --import "$KEYS/$filename"
+    done
+
     # install ansible
     if [[ ! -x /usr/local/bin/ansible ]]; then
         echo "[i] Install Ansible"
@@ -30,6 +45,19 @@ case "$(uname -s)" in
       . /etc/os-release
       case "$ID_LIKE" in
         debian)
+          # install gpg
+          if [[ ! -x /usr/bin/gpg ]]; then
+            echo "[i] Install gpg"
+            sudo apt-get install gpg2
+          fi
+
+          # import GPG keys
+          echo "[i] Importing GPG keys"
+          for filename in "$KEYS/*.asc"; do
+            gpg --import "$KEYS/$filename"
+          done
+
+          # install ansible
           if [[ ! -x /usr/bin/ansible ]]; then
             echo "[i] Add Ansible apt repository"
             echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
