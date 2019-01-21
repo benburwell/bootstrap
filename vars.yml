@@ -88,3 +88,20 @@ pgpass:
     db: metrics
     user: virtyx
     pw: "{{lookup('pipe', 'pass virtyx/metricsdb | head -n1')}}"
+
+rss_feed_urls:
+- https://news.ycombinator.com/rss
+- https://xkcd.com/rss.xml
+- https://www.npr.org/rss/rss.php?id=1001
+- http://feeds.bbci.co.uk/news/world/rss.xml
+- https://hackaday.com/blog/feed/
+- https://www.stallman.org/rss/rss.xml
+
+irc_real_name: Ben
+irc_user_name: bb
+irc_nick: bb
+irc_freenode_password: "{{lookup('pipe', 'pass irc/freenode/password')}}"
+irc_freenode_nick: "{{lookup('pipe', 'pass irc/freenode/nick')}}"
+irc_gimpnet_password: "{{lookup('pipe', 'pass irc/gimpnet')}}"
+irc_2600_nick: "{{lookup('pipe', 'pass irc/2600/nick')}}"
+irc_2600_password: "{{lookup('pipe', 'pass irc/2600/password')}}"

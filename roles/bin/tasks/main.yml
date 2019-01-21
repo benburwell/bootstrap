@@ -1,0 +1,27 @@
+---
+- file:
+    path: ~/.bin
+    state: directory
+    mode: 0700
+- copy:
+    src: '{{item}}'
+    dest: '~/.bin/{{item}}'
+    mode: 0700
+  loop:
+  - _docker
+  - _docker-compose
+  - _jq
+  - brightness.sh
+  - extract
+  - files
+  - headers
+  - launch-chrome
+  - lsproc
+  - mailsync
+  - metar
+  - mutt-notmuch-py
+  - mvi
+  - psqlenv
+  - randombg
+  - randword
+  - taf

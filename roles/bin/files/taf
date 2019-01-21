@@ -1,0 +1,6 @@
+#!/bin/bash
+
+station=$(echo -n "$1" | tr "a-z" "A-Z")
+json=$(curl -s "https://avwx.rest/api/taf/${station:-KBOS}")
+echo "$json" | /usr/local/bin/jq --raw-output '.["Raw-Report"]' 2>&1
+

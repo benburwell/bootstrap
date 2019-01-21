@@ -16,6 +16,11 @@
     src: muttrc
     dest: ~/.muttrc
     mode: 0600
+- name: mailcap
+  copy:
+    src: mailcap
+    dest: ~/.mailcap
+    mode: 0600
 - name: msmtprc
   copy:
     src: msmtprc

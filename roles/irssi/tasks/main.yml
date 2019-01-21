@@ -1,0 +1,12 @@
+---
+- package:
+    name: irssi
+    state: present
+- file:
+    path: ~/.irssi
+    state: directory
+    mode: 0700
+- template:
+    src: config
+    dest: ~/.irssi/config
+    mode: 0600

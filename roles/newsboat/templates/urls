@@ -1,0 +1,4 @@
+# {{ansible_managed}}
+{% for url in rss_feed_urls %}
+{{url}}
+{% endfor %}

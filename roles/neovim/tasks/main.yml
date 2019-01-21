@@ -36,6 +36,10 @@
     dest: ~/.vimrc
     state: link
     mode: '600'
+- copy:
+    src: gvimrc
+    dest: ~/.gvimrc
+    mode: 0600
 - file:
     path: ~/.local/share/nvim/site/autoload
     state: directory

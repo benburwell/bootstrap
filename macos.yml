@@ -49,8 +49,18 @@
     - spotify
     - docker
     - yubikey
+    - newsboat
+    - bin
+    - irssi
+    - ssh
 # TODO
 #iterm2
 #firefox
+#k8s
+#mitmproxy
+#pivman
+#s3cmd
+#slack-term
+#travis
 #
 #pass

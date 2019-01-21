@@ -1,0 +1,13 @@
+---
+- homebrew:
+    name: newsboat
+    state: present
+  when: ansible_pkg_mgr == "homebrew"
+- file:
+    path: ~/.newsboat
+    state: directory
+    mode: 0700
+- template:
+    src: urls
+    dest: ~/.newsboat/urls
+    mode: 0600
