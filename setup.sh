@@ -31,7 +31,13 @@ case "$(uname -s)" in
       case "$ID_LIKE" in
         debian)
           if [[ ! -x /usr/bin/ansible ]]; then
+            echo "[i] Add Ansible apt repository"
+            echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+            sudo apt-get install -y dirmngr
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+
             echo "[i] Install Ansible"
+            sudo apt-get update
             sudo apt-get install -y ansible
           fi
           ;;
