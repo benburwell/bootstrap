@@ -7,6 +7,9 @@ sudo -v
 echo -n "Path to ASCII-armored GPG keys to import: "
 read -r KEYS
 
+echo -n "Password store git host: "
+read -r PASSWORD_STORE_HOST
+
 case "$(uname -s)" in
   Darwin)
     playbook="macos.yml"
@@ -43,15 +46,24 @@ case "$(uname -s)" in
       . /etc/os-release
       if [[ "$ID_LIKE" == "debian" || "$ID" == "debian" ]]; then
         playbook="debian.yml"
-        # install gpg
+
         if [[ ! -x /usr/bin/gpg ]]; then
           echo "[i] Install gpg"
           sudo apt-get install gpg2
         fi
 
-        # import GPG keys
         echo "[i] Importing GPG keys"
         find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
+
+        echo "[i] Install pass"
+        if [[ ! -x /usr/bin/pass ]]; then
+          sudo apt-get install -y pass
+        fi
+
+        echo "[i] Initialize passwords"
+        if [[ ! -d ~/.password-store ]]; then
+          git clone "bb@$PASSWORD_STORE_HOST:git/password-store.git" ~/.password-store
+        fi
 
         # install ansible
         if [[ ! -x /usr/bin/ansible ]]; then
