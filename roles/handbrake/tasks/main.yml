@@ -7,6 +7,7 @@
     name: handbrake
     state: present
   when: ansible_pkg_mgr == "apt"
+  become: yes
 - homebrew:
     name: libdvdcss
     state: present
@@ -15,6 +16,7 @@
     repo: '{{item}}'
     state: present
   when: ansible_pkg_mgr == "apt"
+  become: yes
   loop:
   - deb https://download.videolan.org/pub/debian/stable/ /
   - deb-src https://download.videolan.org/pub/debian/stable/ /
@@ -23,7 +25,9 @@
     url: https://download.videolan.org/pub/debian/videolan-apt.asc
     state: present
   when: ansible_pkg_mgr == "apt"
+  become: yes
 - apt:
     name: libdvdcss
     state: present
   when: ansible_pkg_mgr == "apt"
+  become: yes

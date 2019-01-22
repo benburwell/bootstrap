@@ -2,3 +2,4 @@
 - package:
     name: ffmpeg
     state: present
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
