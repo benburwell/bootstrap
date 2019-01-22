@@ -1,12 +1,20 @@
 ---
-- name: Install Python 2
-  homebrew:
+- homebrew:
     name: python@2
     state: present
-- name: Install Python 3
-  homebrew:
+  when: ansible_pkg_mgr == "homebrew"
+- apt:
     name: python
     state: present
+  when: ansible_pkg_mgr == "apt"
+- homebrew:
+    name: python
+    state: present
+  when: ansible_pkg_mgr == "homebrew"
+- apt:
+    name: python3
+    state: present
+  when: ansible_pkg_mgr == "apt"
 - name: check if pip is installed
   command: which pip
   register: pip_task_installed
