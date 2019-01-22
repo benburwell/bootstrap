@@ -12,6 +12,12 @@
     name: libdvdcss
     state: present
   when: ansible_pkg_mgr == "homebrew"
+- apt_key:
+    id: 0x6BCA5E4DB84288D9
+    url: https://download.videolan.org/pub/debian/videolan-apt.asc
+    state: present
+  when: ansible_pkg_mgr == "apt"
+  become: yes
 - apt_repository:
     repo: '{{item}}'
     state: present
@@ -20,12 +26,6 @@
   loop:
   - deb https://download.videolan.org/pub/debian/stable/ /
   - deb-src https://download.videolan.org/pub/debian/stable/ /
-- apt_key:
-    id: 0x6BCA5E4DB84288D9
-    url: https://download.videolan.org/pub/debian/videolan-apt.asc
-    state: present
-  when: ansible_pkg_mgr == "apt"
-  become: yes
 - apt:
     name: libdvdcss
     state: present

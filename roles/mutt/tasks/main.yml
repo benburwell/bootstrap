@@ -1,16 +1,17 @@
 ---
 - name: Install email packages
-  when: ansible_pkg_mgr == "homebrew"
-  homebrew:
-    name:
-      - mutt
-      - msmtp
-      - notmuch
-      - offlineimap
-      - vdirsyncer
-      - khard
-      - khal
+  package:
+    name: '{{item}}'
     state: present
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
+  loop:
+  - mutt
+  - msmtp
+  - notmuch
+  - offlineimap
+  - vdirsyncer
+  - khard
+  - khal
 - template:
     src: muttrc
     dest: ~/.muttrc
