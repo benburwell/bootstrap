@@ -11,48 +11,43 @@
       - khard
       - khal
     state: present
-- name: muttrc
-  template:
+- template:
     src: muttrc
     dest: ~/.muttrc
     mode: 0600
-- name: mailcap
-  copy:
+- copy:
     src: mailcap
     dest: ~/.mailcap
     mode: 0600
-- name: msmtprc
-  copy:
+- copy:
     src: msmtprc
     dest: ~/.msmtprc
     mode: 0600
-- name: offlineimap.py
-  copy:
+- copy:
     src: offlineimap.py
     dest: ~/.offlineimap.py
     mode: 0700
-- name: offlineimaprc
-  copy:
+- copy:
     src: offlineimaprc
     dest: ~/.offlineimaprc
     mode: 0600
-- name: notmuch-config
-  copy:
+- copy:
     src: notmuch-config
     dest: ~/.notmuch-config
     mode: 0600
-- name: vdirsyncer config
-  copy:
+- file:
+    path: ~/.config
+    state: directory
+    mode: 0700
+- copy:
     src: vdirsyncer_config
     dest: ~/.config/vdirsyncer/config
     mode: 0600
-- name: khal config
-  copy:
+- copy:
     src: khal_config
     dest: ~/.config/khal/config
     mode: 0600
-- name: khard config
-  copy:
+- copy:
     src: khard.conf
     dest: ~/.config/khard/khard.conf
     mode: 0600
