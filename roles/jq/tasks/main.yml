@@ -3,7 +3,7 @@
   package:
     name: jq
     state: present
-  become: ansible_pkg_mgr != "homebrew"
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
 - name: jq directory
   file:
     path: '~/.jq'

@@ -2,7 +2,7 @@
 - package:
     name: lynx
     state: present
-  become: ansible_pkg_mgr != "homebrew"
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
 - copy:
     src: '{{item}}'
     dest: '~/.{{item}}'

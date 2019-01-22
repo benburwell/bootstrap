@@ -2,7 +2,7 @@
 - package:
     name: zsh
     state: present
-  become: ansible_pkg_mgr != "homebrew"
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
 - template:
     src: zshrc
     dest: ~/.zshrc

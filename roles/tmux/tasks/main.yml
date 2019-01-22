@@ -2,7 +2,7 @@
 - package:
     name: tmux
     state: present
-  become: ansible_pkg_mgr != "homebrew"
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
 - template:
     src: tmux.conf.j2
     dest: ~/.tmux.conf

@@ -1,6 +1,6 @@
 ---
 - name: install maven
-  become: ansible_os_family == "Darwin"
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
   package:
     name: maven
     state: present
