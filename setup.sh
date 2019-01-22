@@ -42,6 +42,7 @@ case "$(uname -s)" in
     if [ -f /etc/os-release ]; then
       . /etc/os-release
       if [[ "$ID_LIKE" == "debian" || "$ID" == "debian" ]]; then
+        playbook="debian.yml"
         # install gpg
         if [[ ! -x /usr/bin/gpg ]]; then
           echo "[i] Install gpg"
@@ -55,7 +56,7 @@ case "$(uname -s)" in
         # install ansible
         if [[ ! -x /usr/bin/ansible ]]; then
           echo "[i] Add Ansible apt repository"
-          echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+          echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/ansible.list
           sudo apt-get install -y dirmngr
           sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 
