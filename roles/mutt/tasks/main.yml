@@ -36,9 +36,14 @@
     dest: ~/.notmuch-config
     mode: 0600
 - file:
-    path: ~/.config
+    path: '{{item}}'
     state: directory
     mode: 0700
+  loop:
+    - ~/.config
+    - ~/.config/vdirsyncer
+    - ~/.config/khal
+    - ~/.config/khard
 - copy:
     src: vdirsyncer_config
     dest: ~/.config/vdirsyncer/config
