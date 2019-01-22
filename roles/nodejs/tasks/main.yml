@@ -6,3 +6,8 @@
       - yarn
     state: present
   when: ansible_pkg_mgr == "homebrew"
+- apt:
+    name: node
+    state: present
+  when: ansible_pkg_mgr == "apt"
+  become: true

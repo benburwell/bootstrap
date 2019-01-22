@@ -1,6 +1,10 @@
 ---
-- name: Install GIMP
-  homebrew_cask:
+- homebrew_cask:
     name: gimp
     state: present
   when: ansible_pkg_mgr == "homebrew"
+- apt:
+    name: gimp
+    state: present
+  when: ansible_pkg_mgr == "apt"
+  become: yes

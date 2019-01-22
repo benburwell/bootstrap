@@ -1,6 +1,10 @@
 ---
-- name: Install MacTex
-  homebrew_cask:
+- homebrew_cask:
     name: mactex
     state: present
   when: ansible_pkg_mgr == "homebrew"
+- apt:
+    name: texlive-full
+    state: present
+  when: ansible_pkg_mgr == "apt"
+  become: yes

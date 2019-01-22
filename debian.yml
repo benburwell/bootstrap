@@ -27,7 +27,7 @@
     - gpg
     - mutt
     - ffmpeg
-    - handbrake
+    #- handbrake
     - vlc
     - gimp
     - nodejs

@@ -1,11 +1,12 @@
 ---
 - name: Install git and hub
-  when: ansible_pkg_mgr == "homebrew"
-  homebrew:
-    name:
-      - git
-      - hub
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
+  package:
+    name: '{{item}}'
     state: present
+  loop:
+  - git
+  - hub
 - name: gitconfig
   template:
     src: gitconfig
