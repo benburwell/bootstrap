@@ -5,7 +5,7 @@ echo "[i] Ask for sudo password"
 sudo -v
 
 echo -n "Path to ASCII-armored GPG keys to import: "
-read KEYS
+read -r KEYS
 
 case "$(uname -s)" in
   Darwin)
@@ -30,9 +30,7 @@ case "$(uname -s)" in
 
     # import GPG keys
     echo "[i] Importing GPG keys"
-    for filename in "$KEYS/*.asc"; do
-      gpg --import "$KEYS/$filename"
-    done
+    find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
 
     # install ansible
     if [[ ! -x /usr/local/bin/ansible ]]; then
@@ -43,37 +41,32 @@ case "$(uname -s)" in
   Linux)
     if [ -f /etc/os-release ]; then
       . /etc/os-release
-      case "$ID_LIKE" in
-        debian)
-          # install gpg
-          if [[ ! -x /usr/bin/gpg ]]; then
-            echo "[i] Install gpg"
-            sudo apt-get install gpg2
-          fi
+      if [[ "$ID_LIKE" == "debian" || "$ID" == "debian" ]]; then
+        # install gpg
+        if [[ ! -x /usr/bin/gpg ]]; then
+          echo "[i] Install gpg"
+          sudo apt-get install gpg2
+        fi
 
-          # import GPG keys
-          echo "[i] Importing GPG keys"
-          for filename in "$KEYS/*.asc"; do
-            gpg --import "$KEYS/$filename"
-          done
+        # import GPG keys
+        echo "[i] Importing GPG keys"
+        find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
 
-          # install ansible
-          if [[ ! -x /usr/bin/ansible ]]; then
-            echo "[i] Add Ansible apt repository"
-            echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
-            sudo apt-get install -y dirmngr
-            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+        # install ansible
+        if [[ ! -x /usr/bin/ansible ]]; then
+          echo "[i] Add Ansible apt repository"
+          echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+          sudo apt-get install -y dirmngr
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 
-            echo "[i] Install Ansible"
-            sudo apt-get update
-            sudo apt-get install -y ansible
-          fi
-          ;;
-        *)
-          echo "[!] Unsupported Linux Distribution: $ID"
-          exit 1
-          ;;
-      esac
+          echo "[i] Install Ansible"
+          sudo apt-get update
+          sudo apt-get install -y ansible
+        fi
+      else
+        echo "[!] Unsupported Linux Distribution: $ID"
+        exit 1
+      fi
     else
       echo "[!] Unsupported Linux Distribution"
       exit 1
