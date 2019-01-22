@@ -19,23 +19,31 @@ case "$(uname -s)" in
       xcode-select --install
     fi
 
-    # install homwbrew
     if [[ ! -x /usr/local/bin/brew ]]; then
       echo "[i] Install Homebrew"
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 
-    # install gpg
     if [[ ! -x /usr/local/bin/gpg ]]; then
       echo "[i] Install gpg2"
       brew install gpg2
     fi
 
-    # import GPG keys
-    echo "[i] Importing GPG keys"
-    find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
+    if [[ "$KEYS" != "" ]]; then
+      echo "[i] Importing GPG keys"
+      find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
+    fi
 
-    # install ansible
+    if [[ ! -x /usr/local/bin/pass ]]; then
+      echo "[i] Install pass"
+      brew install pass
+    fi
+
+    if [[ ! -d ~/.password-store ]]; then
+      echo "[i] Initialize passwords"
+      git clone "bb@$PASSWORD_STORE_HOST:git/password-store.git" ~/.password-store
+    fi
+
     if [[ ! -x /usr/local/bin/ansible ]]; then
         echo "[i] Install Ansible"
         brew install ansible
@@ -52,16 +60,18 @@ case "$(uname -s)" in
           sudo apt-get install gpg2
         fi
 
-        echo "[i] Importing GPG keys"
-        find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
+        if [[ "$KEYS" != "" ]]; then
+          echo "[i] Importing GPG keys"
+          find "$KEYS" -type f -name "*.asc" -exec gpg --import {} \;
+        fi
 
-        echo "[i] Install pass"
         if [[ ! -x /usr/bin/pass ]]; then
+          echo "[i] Install pass"
           sudo apt-get install -y pass
         fi
 
-        echo "[i] Initialize passwords"
         if [[ ! -d ~/.password-store ]]; then
+          echo "[i] Initialize passwords"
           git clone "bb@$PASSWORD_STORE_HOST:git/password-store.git" ~/.password-store
         fi
 
@@ -90,16 +100,6 @@ case "$(uname -s)" in
     exit 1
     ;;
 esac
-
-if [ -f "$HOME/.bashrc" ] && [ ! -h "$HOME/.bashrc" ]; then
-  echo "[i] Move current ~/.bashrc to ~/bashrc_backup"
-  mv "$HOME/.bashrc" "$HOME/bashrc_backup"
-fi
-
-if [ -f "$HOME/.bash_profile" ] && [ ! -h "$HOME/.bash_profile" ]; then
-  echo "[i] Move current ~/.bash_profile to ~/bash_profile_backup"
-  mv "$HOME/.bash_profile" "$HOME/bash_profile_backup"
-fi
 
 # Run main playbook
 echo "[i] Run Playbook"
