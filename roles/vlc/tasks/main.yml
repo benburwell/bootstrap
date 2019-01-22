@@ -3,3 +3,8 @@
   homebrew_cask:
     name: vlc
     state: present
+  when: ansible_pkg_mgr == "homebrew"
+- apt:
+    name: vlc
+    state: present
+  when: ansible_pkg_mgr == "apt"
