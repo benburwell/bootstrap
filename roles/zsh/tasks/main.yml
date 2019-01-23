@@ -3,6 +3,16 @@
     name: zsh
     state: present
   become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
+- lineinfile:
+    path: /etc/shells
+    line: /usr/local/bin/zsh
+  when: ansible_os_family == "Darwin"
+  become: yes
+- user:
+    name: '{{ansible_user_id}}'
+    shell: /usr/local/bin/zsh
+  when: ansible_os_family == "Darwin"
+  become: yes
 - template:
     src: zshrc
     dest: ~/.zshrc
