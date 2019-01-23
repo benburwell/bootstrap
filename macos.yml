@@ -53,9 +53,9 @@
     - bin
     - irssi
     - ssh
+    - iterm2
+    - firefox
 # TODO
-#iterm2
-#firefox
 #k8s
 #mitmproxy
 #pivman

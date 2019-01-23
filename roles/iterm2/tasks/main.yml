@@ -2,4 +2,3 @@
 - homebrew_cask:
     name: iterm2
     state: present
-  when: ansible_pkg_mgr == "homebrew"

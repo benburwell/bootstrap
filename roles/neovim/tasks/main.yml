@@ -1,6 +1,8 @@
 ---
 - homebrew:
-    name: neovim
+    name:
+      - neovim
+      - cmake
     state: present
   when: ansible_pkg_mgr == "homebrew"
 - homebrew_cask:
