@@ -105,3 +105,47 @@ irc_freenode_nick: "{{lookup('pipe', 'pass irc/freenode/nick')}}"
 irc_gimpnet_password: "{{lookup('pipe', 'pass irc/gimpnet')}}"
 irc_2600_nick: "{{lookup('pipe', 'pass irc/2600/nick')}}"
 irc_2600_password: "{{lookup('pipe', 'pass irc/2600/password')}}"
+
+dock_items_to_remove:
+- Siri
+- Launchpad
+- Safari
+- Mail
+- Contacts
+- Calendar
+- Notes
+- Reminders
+- Maps
+- Photos
+- FaceTime
+- News
+- iTunes
+- App Store
+dock_items_to_persist:
+- name: Firefox
+  path: /Applications/Firefox.app
+  pos: 1
+- name: Slack
+  path: /Applications/Slack.app
+  pos: 2
+- name: Spotify
+  path: /Applications/Spotify.app
+  pos: 3
+- name: Gnucash
+  path: /Applications/Gnucash.app
+  pos: 4
+- name: Messages
+  path: /Applications/Messages.app
+  pos: 5
+- name: Minecraft
+  path: /Applications/Minecraft.app
+  pos: 6
+- name: iTerm
+  path: /Applications/iTerm.app
+  pos: 7
+- name: VirtualBox
+  path: /Applications/VirtualBox.app
+  pos: 8
+- name: System Preferences
+  path: /Applications/System Preferences.app
+  pos: 9

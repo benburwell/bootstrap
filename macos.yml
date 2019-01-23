@@ -55,6 +55,8 @@
     - ssh
     - iterm2
     - firefox
+    - name: finder
+      tags: wm
 # TODO
 #k8s
 #mitmproxy
@@ -62,5 +64,3 @@
 #s3cmd
 #slack-term
 #travis
-#
-#pass
