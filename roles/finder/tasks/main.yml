@@ -15,3 +15,35 @@
   loop: '{{dock_items_to_persist}}'
 - shell: "dockutil --move '{{item.name}}' --position {{item.pos}}"
   loop: '{{dock_items_to_persist}}'
+- osx_defaults:
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: true
+    state: present
+- osx_defaults:
+    key: NSDocumentSaveNewDocumentsToCloud
+    type: bool
+    value: false
+    state: present
+- osx_defaults:
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+    state: present
+- osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: Nlsv
+    state: present
+- osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 60
+    state: present
+- osx_defaults:
+    key: AppleInterfaceStyle
+    type: string
+    value: Dark
+    state: present
