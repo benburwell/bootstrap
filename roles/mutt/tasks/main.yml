@@ -63,15 +63,21 @@
     name: PATH
     value: "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin/sbin:/usr/local/go/bin"
     user: "{{ansible_user_id}}"
+  tags:
+    - email
 - name: offlineimap cron
   cron:
     name: "sync imap"
     minute: "*/2"
     job: "offlineimap >> /tmp/offlineimap.log 2>&1"
     user: "{{ansible_user_id}}"
+  tags:
+    - email
 - name: vdirsyncer cron
   cron:
     name: "sync vdir"
     minute: "*/2"
     job: "vdirsyncer -v INFO sync >> /tmp/vdirsyncer.log 2>&1"
     user: "{{ansible_user_id}}"
+  tags:
+    - email
