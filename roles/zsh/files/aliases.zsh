@@ -64,6 +64,7 @@ alias dpsa="docker ps -a"
 # edit
 alias e="nvim"
 alias ee="nvim -u NONE"
+alias es="nvim -S Session.vim"
 
 # make
 alias m="make"
