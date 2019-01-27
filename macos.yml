@@ -57,6 +57,8 @@
     - firefox
     - name: finder
       tags: wm
+    - minecraft
+    - gnucash
 # TODO
 #k8s
 #mitmproxy

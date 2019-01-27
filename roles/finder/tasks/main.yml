@@ -47,3 +47,30 @@
     type: string
     value: Dark
     state: present
+- osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1
+    state: present
+- osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: int
+    value: 0
+    state: present
+- name: Enable firewall
+  become: yes
+  shell: |
+    launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+    launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+    /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+    /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+    /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
+    /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
+    pkill -HUP socketfilterfw
+- name: Enable gatekeeper
+  become: yes
+  shell: |
+    spctl --master-enable
+    spctl --enable --label "Developer ID"
