@@ -3,3 +3,4 @@
   homebrew_cask:
     name: virtualbox
     state: present
+    install_options: force
