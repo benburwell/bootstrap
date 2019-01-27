@@ -59,11 +59,17 @@
     type: int
     value: 0
     state: present
+- launchd:
+    name: com.apple.alf.agent
+    state: started
+    enabled: true
+- launchd:
+    name: com.apple.alf.useragent
+    state: started
+    enabled: true
 - name: Enable firewall
   become: yes
   shell: |
-    launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
-    launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
     /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
     /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
     /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
