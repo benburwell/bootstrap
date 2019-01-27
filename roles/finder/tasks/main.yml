@@ -59,19 +59,15 @@
     type: int
     value: 0
     state: present
-- launchd:
-    name: com.apple.alf.agent
-    state: started
-    enabled: true
-  become: yes
-- launchd:
-    name: com.apple.alf.useragent
-    state: started
-    enabled: true
-  become: yes
 - name: Enable firewall
   become: yes
   shell: |
+    if [[ -z $(launchctl list | grep com.apple.alf.agent) ]]; then
+      launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+    fi
+    if [[ -z $(launchctl list | grep com.apple.alf.useragent) ]]; then
+      launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+    fi
     /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
     /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
     /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
