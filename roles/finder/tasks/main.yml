@@ -60,15 +60,15 @@
     value: 0
     state: present
 - launchd:
-    become: yes
     name: com.apple.alf.agent
     state: started
     enabled: true
+  become: yes
 - launchd:
-    become: yes
     name: com.apple.alf.useragent
     state: started
     enabled: true
+  become: yes
 - name: Enable firewall
   become: yes
   shell: |
