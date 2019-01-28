@@ -6,4 +6,4 @@
   shell: |
     export PATH=$PATH:/usr/local/go/bin
     cd ~/.local/share/nvim/plugged/YouCompleteMe
-    ./install.py --go-completer
+    ./install.py --go-completer --java-completer

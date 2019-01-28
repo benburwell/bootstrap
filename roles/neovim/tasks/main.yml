@@ -25,6 +25,11 @@
     name: neovim
     state: present
   become: true
+- pip:
+    executable: pip3
+    name: neovim
+    state: present
+  become: true
 - file:
     path: ~/.config/nvim
     state: directory
