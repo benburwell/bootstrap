@@ -5,7 +5,6 @@ aws_secret_access_key: "{{lookup('pipe', 'pass virtyx/aws-secret-key')}}"
 aws_output: json
 aws_region: us-east-1
 
-
 terminal_foreground_color: '#fffaf5'
 terminal_background_color: '#101321'
 terminal_cursor_color: '#ff261d'

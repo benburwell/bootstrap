@@ -2,3 +2,26 @@
 - homebrew_cask:
     name: iterm2
     state: present
+- file:
+    path: ~/.config
+    state: directory
+    mode: 0700
+- file:
+    path: ~/.config/iterm2
+    state: directory
+    mode: 0700
+- template:
+    src: com.googlecode.iterm2.plist
+    dest: ~/.config/iterm2/com.googlecode.iterm2.plist
+- osx_defaults:
+    domain: com.googlecode.iterm2
+    key: PrefsCustomFolder
+    type: string
+    value: ~/.config/iterm2
+    state: present
+- osx_defaults:
+    domain: com.googlecode.iterm2
+    key: LoadPrefsFromCustomFolder
+    type: bool
+    value: true
+    state: present
