@@ -2,12 +2,16 @@
 - when: ansible_pkg_mgr == "homebrew"
   homebrew_cask:
     state: present
-    name:
-      - yubico-yubikey-manager
-      - yubico-yubikey-piv-manager
+    name: yubico-yubikey-manager
+- when: ansible_pkg_mgr == "homebrew"
+  homebrew_cask:
+    state: present
+    name: yubico-yubikey-piv-manager
 - when: ansible_pkg_mgr == "homebrew"
   homebrew:
     state: present
-    name:
-      - libyubikey
-      - yubikey-personalization
+    name: libyubikey
+- when: ansible_pkg_mgr == "homebrew"
+  homebrew:
+    state: present
+    name: yubikey-personalization
