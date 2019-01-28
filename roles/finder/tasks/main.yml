@@ -59,6 +59,40 @@
     type: int
     value: 0
     state: present
+# - osx_defaults:
+#     key: AppleICUDateFormatStrings
+#     type: dict
+#     value:
+#       - 1
+#       - y-MM-dd
+#     state: present
+# - osx_defaults:
+#     key: AppleFirstWeekday
+#     type: dict
+#     value:
+#       - gregorian
+#       - 2
+#     state: present
+- osx_defaults:
+    key: AppleICUForce24HourTime
+    type: int
+    value: 1
+    state: present
+- osx_defaults:
+    key: AppleMeasurementUnits
+    type: string
+    value: Centimeters
+    state: present
+- osx_defaults:
+    key: AppleMetricUnits
+    type: boolean
+    value: true
+    state: present
+- osx_defaults:
+    key: AppleTemperatureUnit
+    type: string
+    value: Celsius
+    state: present
 - name: Enable firewall
   become: yes
   shell: |

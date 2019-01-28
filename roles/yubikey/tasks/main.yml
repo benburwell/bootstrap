@@ -1,5 +1,9 @@
 ---
 - when: ansible_pkg_mgr == "homebrew"
+  homebrew_tap:
+    name: homebrew/homebrew-cask-drivers
+    state: present
+- when: ansible_pkg_mgr == "homebrew"
   homebrew_cask:
     state: present
     name: yubico-yubikey-manager

@@ -1,4 +1,10 @@
 ---
+- homebrew_tap:
+    name: homebrew/homebrew-cask-fonts
+    state: present
+- homebrew_cask:
+    name: font-fira-code
+    state: present
 - homebrew_cask:
     name: iterm2
     state: present
