@@ -7,10 +7,14 @@ def green_component(color):
 def blue_component(color):
   return int(color[5:7], 16)/255
 
+def css_to_hex(color):
+    return "0x" + color[1:]
+
 class FilterModule(object):
   def filters(self):
     return {
       'red_component': red_component,
       'green_component': green_component,
-      'blue_component': blue_component
+      'blue_component': blue_component,
+      'css_to_hex': css_to_hex
     }

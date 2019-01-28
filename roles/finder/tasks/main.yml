@@ -36,12 +36,12 @@
     type: string
     value: Nlsv
     state: present
-- osx_defaults:
-    domain: com.apple.dock
-    key: tilesize
-    type: int
-    value: 60
-    state: present
+# - osx_defaults:
+#     domain: com.apple.dock
+#     key: tilesize
+#     type: int
+#     value: 60
+#     state: present
 - osx_defaults:
     key: AppleInterfaceStyle
     type: string

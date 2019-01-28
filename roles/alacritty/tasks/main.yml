@@ -1,0 +1,15 @@
+---
+- homebrew_cask:
+    name: alacritty
+    state: present
+- file:
+    path: ~/.config
+    state: directory
+- file:
+    path: ~/.config/alacritty
+    state: directory
+    mode: 0700
+- template:
+    src: alacritty.yml
+    dest: ~/.config/alacritty/alacritty.yml
+    mode: 0600
