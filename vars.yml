@@ -149,3 +149,12 @@ dock_items_to_persist:
 - name: System Preferences
   path: /Applications/System Preferences.app
   pos: 9
+
+zsh_external_startup_scripts:
+- /usr/local/opt/fzf/shell/completion.zsh
+- /usr/local/opt/fzf/shell/key-bindings.zsh
+- $HOME/.iterm2_shell_integration.zsh
+- $HOME/.travis/travis.sh
+- $HOME/.rvm/scripts/rvm
+- $HOME/Applications/google-cloud-sdk/path.zsh.inc
+- $HOME/Applications/google-cloud-sdk/completion.zsh.inc
