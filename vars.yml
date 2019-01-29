@@ -120,6 +120,7 @@ dock_items_to_remove:
 - News
 - iTunes
 - App Store
+- iTerm
 dock_items_to_persist:
 - name: Firefox
   path: /Applications/Firefox.app
@@ -139,8 +140,8 @@ dock_items_to_persist:
 - name: Minecraft
   path: /Applications/Minecraft.app
   pos: 6
-- name: iTerm
-  path: /Applications/iTerm.app
+- name: Alacritty
+  path: /Applications/Alacritty.app
   pos: 7
 - name: VirtualBox
   path: /Applications/VirtualBox.app
