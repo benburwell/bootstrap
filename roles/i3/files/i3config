@@ -94,5 +94,12 @@ bindsym $mod+Shift+f fullscreen
 
 bar {
   position top
+  colors {
+    background #0e2133
+    focused_workspace   #5c7b99 #5c7b99 #e6e0cf
+    active_workspace   #5c7b99 #5c7b99 #e6e0cf
+    inactive_workspace #5c7b99 #0e2133 #5c7b99
+    urgent_workspace   #df6a6a #df6a6a #0e2133
+  }
   status_command i3status -c ~/.i3status.conf
 }

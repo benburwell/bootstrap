@@ -1,8 +1,10 @@
 # vim: ft=i3
 
 general {
-	colors = true
-	interval = 5
+  interval = 5
+  colors = true
+  color_good = "#99b34f"
+  color_bad = "#df6a6a"
 }
 
 order += "disk /"
@@ -13,25 +15,29 @@ order += "load"
 order += "tztime local"
 
 ethernet bge0 {
-	format_up = "E: %ip (%speed)"
+  format_up = "E: %ip (%speed)"
+  format_down = ""
 }
 
 tztime local {
-	format = "%Y-%m-%d %H:%M:%S"
+  format = "%Y-%m-%d %H:%M"
 }
 
 load {
-	format = "%5min"
+  format = "%5min"
 }
 
 disk "/" {
-	format = "%free"
+  format = "%free"
 }
 
 wireless wlp1s0 {
-	format_up = "W: (%essid @ %quality) %ip"
+  format_up = "W: (%essid @ %quality) %ip"
+  format_down = ""
 }
 
 battery 0 {
-	format = "%status %percentage"
+  format = "⚡%status %percentage"
+  format_down = ""
+  status_full = ""
 }
