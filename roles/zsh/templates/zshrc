@@ -11,7 +11,6 @@ fi
 
 source $ZSH/env.zsh
 source $ZSH/path.zsh
-source $ZSH/prompt.zsh
 source $ZSH/window.zsh
 source $ZSH/aliases.zsh
 source $ZSH/config.zsh
