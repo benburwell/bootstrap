@@ -3,7 +3,7 @@
   hosts: localhost
   vars:
     sudoers_group: sudo
-    gpg_pinentry_program: /usr/bin/pinentry
+    gpg_pinentry_program: /usr/bin/pinentry-qt
   vars_files:
     - vars.yml
   roles:

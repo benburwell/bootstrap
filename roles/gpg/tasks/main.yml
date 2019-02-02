@@ -7,6 +7,11 @@
       - gpgme
       - gnupg
       - pinentry-mac
+- apt:
+    name: pinentry-qt
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "apt"
 - file:
     path: ~/.gnupg
     state: directory
