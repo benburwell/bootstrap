@@ -15,6 +15,9 @@ set-option -g mode-keys vi
 set-option -g status-right '%d%H%M%Z #(date -u +"%%d%%H%%M%%Z") #(cat $HOME/.cache/metar)'
 set-option -g status-right-length 100
 
+set-option -g status-bg default
+set-option -g status-fg green
+
 # make | and - split windows
 bind-key | split-window -h
 bind-key - split-window -v

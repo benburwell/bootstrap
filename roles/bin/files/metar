@@ -1,6 +1,10 @@
 #!/bin/bash
 
 say=0
+jq="/usr/bin/jq"
+if [[ ! -x "$jq" && -x "/usr/local/bin/jq" ]]; then
+  jq="/usr/local/bin/jq"
+fi
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -19,8 +23,7 @@ while [ $# -gt 0 ]; do
 done
 json=$(curl -s "https://avwx.rest/api/metar/${station:-KBOS}?options=speech")
 if [ $say -gt 0 ]; then
-  echo "$json" | /usr/local/bin/jq --raw-output '.Speech' 2>&1 | say
+  echo "$json" | "$jq" --raw-output '.Speech' 2>&1 | say
 else
-  echo "$json" | /usr/local/bin/jq --raw-output '.["Raw-Report"]' 2>&1
+  echo "$json" | "$jq" --raw-output '.["Raw-Report"]' 2>&1
 fi
-

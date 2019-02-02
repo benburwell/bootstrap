@@ -10,8 +10,11 @@
     - passwordless-sudo
     - apt
     - name: zsh
-      tags: de
-    - tmux
+      tags:
+      - de
+      - ce
+    - name: tmux
+      tags: ce
     - lynx
     - python
     - golang
@@ -44,16 +47,19 @@
     - spotify
     - docker
     - name: yubikey
-      tags: sec
+      tags: crypto
     - newsboat
     - bin
     - irssi
-    - ssh
+    - name: ssh
+      tags: crypto
     - firefox
     - name: xorg
       tags: de
     - urxvt
     - name: alacritty
-      tags: de
+      tags:
+      - de
+      - ce
     - name: i3
       tags: de
