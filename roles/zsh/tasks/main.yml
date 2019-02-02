@@ -36,7 +36,6 @@
     - config.zsh
     - env.zsh
     - path.zsh
-    - prompt.zsh
     - window.zsh
 - copy:
     src: 'func_{{item}}.zsh'

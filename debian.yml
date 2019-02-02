@@ -7,11 +7,10 @@
   vars_files:
     - vars.yml
   roles:
-    - alacritty
-    - i3
     - passwordless-sudo
     - apt
-    - zsh
+    - name: zsh
+      tags: de
     - tmux
     - lynx
     - python
@@ -29,7 +28,6 @@
     - gpg
     - mutt
     - ffmpeg
-    #- handbrake
     - vlc
     - gimp
     - nodejs
@@ -45,11 +43,17 @@
     - slack
     - spotify
     - docker
-    - yubikey
+    - name: yubikey
+      tags: sec
     - newsboat
     - bin
     - irssi
     - ssh
     - firefox
-    - xorg
+    - name: xorg
+      tags: de
     - urxvt
+    - name: alacritty
+      tags: de
+    - name: i3
+      tags: de

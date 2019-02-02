@@ -6,9 +6,6 @@ set nocompatible
 " UI Settings
 syntax enable
 set nowrap
-if has("termguicolors")
-  set termguicolors
-endif
 set listchars=tab:›\ ,nbsp:_,trail:·
 set list
 
@@ -33,10 +30,7 @@ set wildmode=longest,list,full
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'Quramy/tsuquyomi', {'for' : 'typescript'}
 Plug 'Shougo/vimproc', {'do' : 'make'}
-"Plug 'Valloric/YouCompleteMe', {'do' : './install.py'}
-Plug 'benburwell/blayu.vim'
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', {'for' : 'csv'}
 Plug 'chrisbra/Colorizer'
@@ -47,8 +41,6 @@ Plug 'junegunn/fzf'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
 Plug 'leafgarland/typescript-vim', {'for' : 'typescript'}
-"Plug 'prettier/vim-prettier', {'do': 'npm install'}
-"Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -58,8 +50,9 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vito-c/jq.vim'
 call plug#end()
 
-" Color scheme
-colorscheme blayu
+" Custom highlighting
+hi Comment ctermfg=Black
+hi NonText ctermfg=Black
 
 " Filetype-specific configuration and autocommands
 
@@ -78,54 +71,11 @@ au FileType gitconfig setlocal noexpandtab
 " see https://stackoverflow.com/a/21194148
 autocmd FileType crontab setlocal nowritebackup
 
-" autoformat on save
-"augroup fmt
-"	autocmd!
-"	autocmd BufWritePre * :undojoin | Neoformat
-"augroup END
-
-" Plugin Options
-
-" youcompleteme settings
-"let g:ycm_autoclose_preview_window_after_completion = 1
-
-" fugitive settings
-set diffopt+=vertical
-
-" prettier settings
-"let g:prettier#autoformat = 0
-"let g:prettier#exec_cmd_async = 1
-
 " colorizer settings
 let g:colorizer_auto_filetype=''
 
-" neoformat settings
-"let g:neoformat_java_google = {
-"	\ 'exe': 'google-java-format',
-"	\ 'args': ['-'],
-"	\ 'stdin': 1,
-"	\ }
-"let g:neoformat_html_beautify = {
-"    \ 'exe': 'js-beautify',
-"    \ 'args': ['--html', '--editorconfig'],
-"    \ 'stdin': 1,
-"    \ }
-"let g:neoformat_enabled_java = ['google']
-"let g:neoformat_enabled_javascript = ['prettier']
-"let g:neoformat_enabled_typescript = ['prettier']
-"let g:neoformat_enabled_css = ['prettier']
-"let g:neoformat_enabled_less = ['prettier']
-"let g:neoformat_enabled_sass = ['prettier']
-"let g:neoformat_enabled_scss = ['prettier']
-"let g:neoformat_enabled_xml = []
-"let g:neoformat_enabled_html = ['beautify']
-"let g:neoformat_enabled_xhtml = []
-"let g:neoformat_enabled_sql = []
-
 " vim-go settings
 let g:go_metalinter_autosave = 1
-
-" Custom keybindings
 
 " double-Esc clears last search
 nnoremap <silent> <Esc><Esc> <Esc>:let @/=""<CR><Esc>
