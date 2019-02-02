@@ -28,7 +28,7 @@
     src: offlineimap.py
     dest: ~/.offlineimap.py
     mode: 0700
-- copy:
+- template:
     src: offlineimaprc
     dest: ~/.offlineimaprc
     mode: 0600
