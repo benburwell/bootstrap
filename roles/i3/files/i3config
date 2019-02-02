@@ -1,15 +1,17 @@
 # vim: ft=i3 expandtab:
 
 set $mod Mod1
-font pango:Fira Code 9
-exec --no-startup-id ~/.dotfiles/bin/randombg
+font pango:Fira Code 11
+#exec --no-startup-id ~/.dotfiles/bin/randombg
 exec --no-startup-id nm-applet
+
+new_window pixel 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtcd -e tmux new-session -A -s ben
+bindsym $mod+Return exec alacritty
 bindsym $mod+f exec firefox
 
 # kill focused window
@@ -65,21 +67,21 @@ bindsym $mod+p layout toggle split
 # resize window
 bindsym $mod+Shift+a mode "resize"
 mode "resize" {
-    # let the upper left be the "origin", so movements toward upper left
-    # are shrinking movements, and movements away from upper left are growing
-    bindsym h resize shrink width 5 px or 5 ppt
-    bindsym l resize grow width 5 px or 5 ppt
-    bindsym k resize shrink height 5 px or 5 ppt
-    bindsym j resize grow height 5 px or 5 ppt
+  # let the upper left be the "origin", so movements toward upper left
+  # are shrinking movements, and movements away from upper left are growing
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
 
-    # enter and escape to return to normal mode
-    bindsym Escape mode "default"
-    bindsym $mod+Shift+a mode "default"
+  # enter and escape to return to normal mode
+  bindsym Escape mode "default"
+  bindsym $mod+Shift+a mode "default"
 }
 
 # special keys
-bindsym XF86MonBrightnessUp exec ~/.dotfiles/bin/brightness.sh +10
-bindsym XF86MonBrightnessDown exec ~/.dotfiles/bin/brightness.sh -10
+#bindsym XF86MonBrightnessUp exec ~/.dotfiles/bin/brightness.sh +10
+#bindsym XF86MonBrightnessDown exec ~/.dotfiles/bin/brightness.sh -10
 bindsym XF86AudioRaiseVolume exec amixer -c0 set Master 2db+
 bindsym XF86AudioLowerVolume exec amixer -c0 set Master 2db-
 bindsym XF86AudioMute exec amixer -c0 set Master toggle
@@ -91,5 +93,6 @@ bindsym $mod+Shift+d exec i3lock -n -c 000000
 bindsym $mod+Shift+f fullscreen
 
 bar {
-    status_command i3status -c ~/.i3status.conf
+  position top
+  status_command i3status -c ~/.i3status.conf
 }

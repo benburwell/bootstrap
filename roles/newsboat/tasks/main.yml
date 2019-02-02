@@ -3,6 +3,11 @@
     name: newsboat
     state: present
   when: ansible_pkg_mgr == "homebrew"
+- apt:
+    name: newsboat
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "apt"
 - file:
     path: ~/.newsboat
     state: directory

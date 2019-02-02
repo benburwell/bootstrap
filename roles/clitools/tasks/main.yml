@@ -1,5 +1,5 @@
 ---
-- homebrew:
+- package:
     state: present
     name:
       - ctop
@@ -12,3 +12,5 @@
       - sqlite
       - tree
       - watch
+      - curl
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"

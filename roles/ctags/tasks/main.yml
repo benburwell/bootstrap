@@ -1,8 +1,9 @@
 ---
 - name: Install ctags
-  homebrew:
+  package:
     name: ctags
     state: present
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
 - copy:
     src: ctags
     dest: ~/.ctags

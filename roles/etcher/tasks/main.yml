@@ -3,3 +3,4 @@
   homebrew_cask:
     name: etcher
     state: present
+  when: ansible_pkg_mgr == "homebrew"

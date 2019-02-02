@@ -15,6 +15,7 @@
     name: python3
     state: present
   when: ansible_pkg_mgr == "apt"
+  become: yes
 - name: check if pip is installed
   command: which pip
   register: pip_task_installed

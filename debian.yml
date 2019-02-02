@@ -7,6 +7,8 @@
   vars_files:
     - vars.yml
   roles:
+    - alacritty
+    - i3
     - passwordless-sudo
     - apt
     - zsh
@@ -50,5 +52,4 @@
     - ssh
     - firefox
     - xorg
-    - i3
     - urxvt

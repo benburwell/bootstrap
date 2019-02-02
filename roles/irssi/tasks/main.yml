@@ -2,6 +2,7 @@
 - package:
     name: irssi
     state: present
+  become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
 - file:
     path: ~/.irssi
     state: directory

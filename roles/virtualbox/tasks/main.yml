@@ -4,3 +4,10 @@
     name: virtualbox
     state: present
     install_options: force
+  when: ansible_pkg_mgr == "homebrew"
+- name: VirtualBox
+  apt:
+    name: virtualbox
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "apt"

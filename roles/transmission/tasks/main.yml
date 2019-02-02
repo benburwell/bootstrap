@@ -3,3 +3,4 @@
   homebrew_cask:
     name: transmission
     state: present
+  when: ansible_pkg_mgr == "homebrew"

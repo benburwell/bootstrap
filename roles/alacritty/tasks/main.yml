@@ -2,6 +2,12 @@
 - homebrew_cask:
     name: alacritty
     state: present
+  when: ansible_pkg_mgr == "homebrew"
+- apt:
+    deb: https://github.com/jwilm/alacritty/releases/download/v0.2.7/Alacritty-v0.2.7_amd64.deb
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "apt"
 - file:
     path: ~/.config
     state: directory

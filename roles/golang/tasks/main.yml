@@ -1,22 +1,25 @@
 ---
 - name: check if go is installed
   command: which go
-  register: go_installed
+  register: go_command
   changed_when: no
   failed_when: no
+- stat:
+    path: /usr/local/go
+  register: go_path
 - homebrew:
     name: go
     state: present
-  when: go_installed is defined and
-        go_installed.rc is defined and
-        go_installed.rc != 0 and
+  when: go_command is defined and
+        go_command.rc is defined and
+        go_command.rc != 0 and
         ansible_os_family == "Darwin"
 - unarchive:
     src: https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
     dest: /usr/local
     remote_src: yes
   become: true
-  when: go_installed is defined and
-        go_installed.rc is defined and
-        go_installed.rc != 0 and
+  when: go_path is defined and
+        go_path.stat is defined and
+        go_path.stat.exists == False and
         ansible_system == "Linux"

@@ -21,15 +21,15 @@
     - software-properties-common
   become: true
   when: ansible_pkg_mgr == "apt"
-- pip:
-    name: neovim
-    state: present
-  become: true
-- pip:
-    executable: pip3
-    name: neovim
-    state: present
-  become: true
+#- pip:
+#    name: neovim
+#    state: present
+#  become: true
+#- pip:
+#    executable: pip3
+#    name: neovim
+#    state: present
+#  become: true
 - file:
     path: ~/.config/nvim
     state: directory
@@ -56,4 +56,4 @@
     dest: ~/.local/share/nvim/site/autoload/plug.vim
   notify:
     - PlugInstall
-    - InstallYouCompleteMe
+    #- InstallYouCompleteMe
