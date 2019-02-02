@@ -24,6 +24,7 @@ fpath=($HOME/.bin $ZSH/functions $fpath)
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye > /dev/null 2>&1
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
