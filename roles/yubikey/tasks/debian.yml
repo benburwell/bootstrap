@@ -1,0 +1,9 @@
+---
+- apt:
+    name: "{{item}}"
+    state: present
+  become: yes
+  loop:
+  - pcscd
+  - scdaemon
+  - pcsc-tools

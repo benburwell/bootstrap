@@ -1,0 +1,16 @@
+---
+- homebrew_tap:
+    name: homebrew/homebrew-cask-drivers
+    state: present
+- homebrew_cask:
+    state: present
+    name: "{{item}}"
+  loop:
+  - yubico-yubikey-manager
+  - yubico-yubikey-piv-manager
+- homebrew:
+    state: present
+    name: "{{item}}"
+  loop:
+  - libyubikey
+  - yubikey-personalization
