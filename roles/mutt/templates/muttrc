@@ -110,21 +110,21 @@ macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py
 macro index,pager A "<pipe-message>khard add-email<return>" "add the sender email address to khard"
 
 # colors
-color hdrdefault blue          black
-color quoted     blue          black
-color signature  blue          black
-color attachment red           black
-color message    brightred     black
-color error      brightred     black
-color indicator  brightgreen   black
-color status     brightblue    black
-color tree       white         black
-color normal     white         black
-color markers    red           black
-color search     white         black
-color tilde      brightmagenta black
-color index      blue          black ~F
-color index      green         black "~N|~O"
+color hdrdefault blue          default
+color quoted     blue          default
+color signature  blue          default
+color attachment red           default
+color message    brightred     default
+color error      brightred     default
+color indicator  brightgreen   default
+color status     brightblue    default
+color tree       white         default
+color normal     white         default
+color markers    red           default
+color search     white         default
+color tilde      brightmagenta default
+color index      blue          default ~F
+color index      green         default "~N|~O"
 
 # use first mailbox by default
 set folder = "~/Mail/Fastmail"
