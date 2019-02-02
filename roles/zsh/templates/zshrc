@@ -38,3 +38,7 @@ if [[ -f "{{script}}" ]] ; then source "{{script}}" ; fi
 if [[ "$ALACRITTY" ]]; then
   ~/.bin/alacritty-fullscreen
 fi
+
+if [[ -x /usr/bin/setxkbmap ]]; then
+  setxkbmap -option caps:escape
+fi
