@@ -71,7 +71,7 @@ function add_password {
   local prompt account_name menu generated_password password_1 password_2 \
     pasted_password confirmed_pasted_password
 
-  prompt="Enter Accountname: (service/username)"
+  prompt="Password name:"
   account_name=$(echo | dmenu -i -p "$prompt")
 
   if [[ -z "$account_name" ]]; then
@@ -166,7 +166,7 @@ function select_password {
     "${password_list[@]}"
   )
 
-  prompt="Passman: search and select!"
+  prompt="password-store"
   new_password=$(echo "${menu[@]}" | xargs -n 1 | dmenu -i -p "$prompt")
 
   # There is nothing left to do, if user didn't select an option
@@ -205,7 +205,6 @@ function select_password_action {
   fi
 
   menu=(
-    "\"Copy [u]sername\""
     "\"Copy pass[w]ord\""
     "\"Copy O[T]P\""
   )
@@ -213,12 +212,6 @@ function select_password_action {
   action=$(echo "${menu[@]}" | xargs -n 1 | dmenu -i -p "$account")
 
   case $action in
-
-    "Copy [u]sername")
-      user="$(echo "$account" | cut -d/ -f2)"
-      clip "$user"
-      notification "Username copied!"
-      ;;
 
     "Copy pass[w]ord")
       password=$(pass show "$account" | head -n 1)
