@@ -93,7 +93,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 # major actions
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
-bindsym $mod+Shift+d exec i3lock -n -c 000000
+bindsym $mod+Shift+d exec i3lock -n -i ~/.wallpaper/crystal.png --ignore-empty-password
 bindsym $mod+Shift+f fullscreen
 
 bar {
