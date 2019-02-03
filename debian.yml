@@ -38,7 +38,8 @@
     - git
     - mitmproxy
     - ctags
-    - clitools
+    - name: clitools
+      tags: ce
     - virtualbox
     - wireshark
     - transmission

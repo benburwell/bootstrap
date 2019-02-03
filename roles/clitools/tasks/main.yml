@@ -13,4 +13,5 @@
       - tree
       - watch
       - curl
+      - nnn
   become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
