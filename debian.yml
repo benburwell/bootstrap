@@ -63,3 +63,5 @@
       - ce
     - name: i3
       tags: de
+    - name: passman
+      tags: crypto

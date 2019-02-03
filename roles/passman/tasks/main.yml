@@ -1,0 +1,10 @@
+---
+- apt:
+    name: libnotify-bin
+    state: present
+  become: yes
+- copy:
+    src: passman
+    dest: /usr/bin/passman
+    mode: 0755
+  become: yes
