@@ -11,6 +11,7 @@
   - _docker
   - _docker-compose
   - _jq
+  - alacritty-fullscreen
   - brightness.sh
   - extract
   - files
@@ -24,5 +25,5 @@
   - psqlenv
   - randombg
   - randword
+  - setbg.sh
   - taf
-  - alacritty-fullscreen

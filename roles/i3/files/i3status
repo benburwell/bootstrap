@@ -5,13 +5,16 @@ general {
   colors = true
   color_good = "#99b34f"
   color_bad = "#df6a6a"
+  color_degraded = "#f7cd86"
 }
 
+order += "volume master"
 order += "disk /"
 order += "ethernet bge0"
 order += "wireless wlp1s0"
 order += "battery 0"
 order += "load"
+order += "cpu_temperature 0"
 order += "tztime local"
 
 ethernet bge0 {
@@ -20,11 +23,15 @@ ethernet bge0 {
 }
 
 tztime local {
-  format = "%Y-%m-%d %H:%M"
+  format = "%a %d %b %H:%M"
 }
 
 load {
-  format = "%5min"
+  format = "%1min"
+}
+
+cpu_temperature 0 {
+  format = "%degrees°C"
 }
 
 disk "/" {
@@ -32,12 +39,28 @@ disk "/" {
 }
 
 wireless wlp1s0 {
-  format_up = "W: (%essid @ %quality) %ip"
+  format_up = "%essid %quality %ip"
   format_down = ""
 }
 
 battery 0 {
-  format = "⚡%status %percentage"
+  format = "%status %percentage %remaining"
   format_down = ""
-  status_full = ""
+  last_full_capacity = true
+  integer_battery_capacity = true
+  low_threshold = 11
+  threshold_type = percentage
+  hide_seconds = true
+  status_chr = "⚇"
+  status_bat = "⚡"
+  status_unk = "?"
+  status_full = "☻"
+}
+
+volume master {
+  format = "%volume"
+  format_muted = "MUTE"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
 }
