@@ -67,3 +67,5 @@
       tags: crypto
     - name: autofs
       tags: net
+    - name: network-manager
+      tags: net
