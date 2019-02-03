@@ -18,7 +18,7 @@ order += "cpu_temperature 0"
 order += "tztime local"
 
 ethernet bge0 {
-  format_up = "E: %ip (%speed)"
+  format_up = "%ip"
   format_down = ""
 }
 
@@ -58,8 +58,8 @@ battery 0 {
 }
 
 volume master {
-  format = "%volume"
-  format_muted = "MUTE"
+  format = " 🔊 %volume"
+  format_muted = " 🔇"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
