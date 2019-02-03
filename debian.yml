@@ -65,3 +65,5 @@
       tags: de
     - name: passman
       tags: crypto
+    - name: autofs
+      tags: net

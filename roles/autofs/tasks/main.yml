@@ -1,0 +1,18 @@
+---
+- apt:
+    name: '{{item}}'
+    state: present
+  become: yes
+  loop:
+  - autofs
+  - udev
+  - nfs-common
+- copy:
+    src: net.autofs
+    dest: /etc/auto.master.d/net.autofs
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  notify:
+  - RestartAutofs

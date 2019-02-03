@@ -1,0 +1,2 @@
+# enable browsing nfs shares from the /net directory
+/net -hosts
