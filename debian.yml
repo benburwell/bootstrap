@@ -70,3 +70,5 @@
       tags: net
     - name: network-manager
       tags: net
+    - name: audio
+      tags: audio
