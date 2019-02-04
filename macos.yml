@@ -9,12 +9,15 @@
     - vars.yml
   roles:
     - passwordless-sudo
-    - zsh
-    - tmux
+    - name: zsh
+      tags: ce
+    - name: tmux
+      tags: ce
     - lynx
     - python
     - golang
-    - neovim
+    - name: neovim
+      tags: ce
     - jq
     - aws
     - postgresql-client
@@ -54,12 +57,13 @@
     - irssi
     - ssh
     - iterm2
-    - firefox
+    # - firefox
     - name: finder
-      tags: wm
+      tags: de
     - minecraft
     - gnucash
-    - alacritty
+    - name: alacritty
+      tags: ce
 # TODO
 #k8s
 #mitmproxy
