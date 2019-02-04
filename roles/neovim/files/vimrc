@@ -1,15 +1,8 @@
-" General Setup
-
-" let's just get this right out of the way, we're gonna be...
 set nocompatible
-
-" UI Settings
 syntax enable
 set nowrap
 set listchars=tab:›\ ,nbsp:_,trail:·
 set list
-
-" General file settings
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
@@ -18,7 +11,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
 set incsearch
 set ignorecase
 set smartcase
@@ -27,10 +19,8 @@ set path+=**
 set wildmenu
 set wildmode=longest,list,full
 
-" Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'Shougo/vimproc', {'do' : 'make'}
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim', {'for' : 'csv'}
 Plug 'chrisbra/Colorizer'
@@ -50,51 +40,23 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vito-c/jq.vim'
 call plug#end()
 
-" Custom highlighting
-hi Comment ctermfg=Black
-hi NonText ctermfg=Black
+hi! Comment      ctermfg=Black
+hi! NonText      ctermfg=Black
+hi! Folded       ctermfg=Black ctermbg=NONE
+hi! LineNr       ctermfg=Black
+hi! StatusLine   cterm=bold ctermfg=Blue ctermbg=NONE
+hi! StatusLineNC cterm=NONE ctermfg=Black ctermbg=NONE
+hi! VertSplit    cterm=NONE ctermfg=Black ctermbg=NONE
 
-" Filetype-specific configuration and autocommands
-
-" spellcheck markdown files and git commit messages
-au FileType markdown set spell tw=80 colorcolumn=81 nosmartindent
-au FileType gitcommit set spell
-
-" when writing java code, use javacomplete as the omnifunc and set spacing
-"au FileType java setlocal omnifunc=javacomplete#Complete
+au FileType markdown setlocal spell tw=80 colorcolumn=81 nosmartindent
+au FileType gitcommit setlocal spell
 au FileType java setlocal errorformat=[ERROR]\ %f:[%l\\,%v]\ %m
-
-" git-config(1) uses tabs, so we should too
 au FileType gitconfig setlocal noexpandtab
+au FileType crontab setlocal nowritebackup
 
-" crontab must be edited in place, which is not done by default
-" see https://stackoverflow.com/a/21194148
-autocmd FileType crontab setlocal nowritebackup
-
-" colorizer settings
 let g:colorizer_auto_filetype=''
-
-" vim-go settings
 let g:go_metalinter_autosave = 1
 
-" double-Esc clears last search
 nnoremap <silent> <Esc><Esc> <Esc>:let @/=""<CR><Esc>
-
-" make it easier to type ex commands
 noremap ; :
-
-" open FZF with Ctrl-P
 nmap <C-p> :FZF<CR>
-
-" easier navigation
-"
-" this is hacky but some terminals send <BS> instead of <C-h> when ctrl-h is
-" pressed. since i don't really use <BS> in normal mode, this seems like a
-" reasonable thing for it to do.
-nmap <BS> <C-w>h
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-nmap <C-q> <C-w>q
-
