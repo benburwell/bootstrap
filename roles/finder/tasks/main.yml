@@ -93,6 +93,12 @@
     type: string
     value: Celsius
     state: present
+- osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    state: present
 - name: Enable firewall
   become: yes
   shell: |
