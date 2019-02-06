@@ -18,7 +18,7 @@
     #- python
     - golang
     - neovim
-    #- jq
+    - jq
     #- aws
     #- postgresql-client
     #- java
@@ -61,7 +61,7 @@
       - de
       - ce
     - name: i3
-      tags: de
+      tags: de,i3
     - name: passman
       tags: crypto
     #- name: autofs

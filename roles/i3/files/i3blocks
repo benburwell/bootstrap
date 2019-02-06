@@ -1,0 +1,26 @@
+command=~/code/src/github.com/vivien/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
+interval=15
+color=#5c7b99
+
+[disk]
+
+[cpu_usage]
+
+[memory]
+
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=600
+
+[iface]
+IFACE=wlp1s0
+
+[essid]
+interval=60
+INTERFACE=wlp1s0
+
+[battery2]
+markup=pango
+
+[date]
+command=date +'%a %d %b %H:%M'
