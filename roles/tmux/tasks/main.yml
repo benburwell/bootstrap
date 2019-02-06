@@ -11,6 +11,11 @@
     path: ~/.cache
     state: directory
     mode: 0700
+- pacman:
+    name: cronie
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"
 - name: cron path
   cron:
     env: yes

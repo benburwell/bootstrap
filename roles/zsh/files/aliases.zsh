@@ -9,14 +9,12 @@ if [[ $(uname) == "Darwin" ]]; then
   alias la="ls -lAGh"
   alias ll="ls -lGh"
   alias ls="ls -Gh"
-fi
-if [[ $(uname) == "FreeBSD" ]]; then
+elif [[ $(uname) == "FreeBSD" ]]; then
   alias l="ls -lAhG"
   alias la="ls -lAGh"
   alias ll="ls -lGh"
   alias ls="ls -Gh"
-fi
-if [[ $(uname -a | grep Ubuntu) || $(uname -a | grep Debian) ]]; then
+else
   alias l="ls -lah --color"
   alias la="ls -la --color"
   alias ll="ls -l --color"

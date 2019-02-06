@@ -1,0 +1,72 @@
+---
+- name: Playbook to manage Arch configuration
+  hosts: localhost
+  vars:
+    sudoers_group: sudo
+    gpg_pinentry_program: /usr/bin/pinentry-qt
+  vars_files:
+    - vars.yml
+  roles:
+    - passwordless-sudo
+    - name: zsh
+      tags:
+      - de
+      - ce
+    - name: tmux
+      tags: ce
+    #- lynx
+    #- python
+    - golang
+    - neovim
+    #- jq
+    #- aws
+    #- postgresql-client
+    #- java
+    #- google-java-format
+    #- ngrok
+    #- maven
+    - fzf
+    - ripgrep
+    - gpg
+    #- mutt
+    #- ffmpeg
+    #- vlc
+    #- gimp
+    #- nodejs
+    #- tex
+    - git
+    #- mitmproxy
+    #- ctags
+    #- name: clitools
+    #  tags: ce
+    #- virtualbox
+    #- wireshark
+    #- transmission
+    #- etcher
+    #- slack
+    #- spotify
+    #- docker
+    - name: yubikey
+      tags: crypto
+    #- newsboat
+    - bin
+    #- irssi
+    - name: ssh
+      tags: crypto
+    - firefox
+    #- name: xorg
+    #  tags: de
+    - name: alacritty
+      tags:
+      - de
+      - ce
+    - name: i3
+      tags: de
+    - name: passman
+      tags: crypto
+    #- name: autofs
+    #  tags: net
+    #- name: network-manager
+    #  tags: net
+    #- name: audio
+    #  tags: audio

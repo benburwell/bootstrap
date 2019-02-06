@@ -8,6 +8,11 @@
     state: present
   become: yes
   when: ansible_pkg_mgr == "apt"
+- pacman:
+    name: alacritty
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"
 - file:
     path: ~/.config
     state: directory

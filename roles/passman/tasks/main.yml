@@ -3,6 +3,14 @@
     name: libnotify-bin
     state: present
   become: yes
+  when: ansible_pkg_mgr == "apt"
+- pacman:
+    name:
+    - libnotify
+    - pass
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"
 - copy:
     src: passman
     dest: /usr/bin/passman

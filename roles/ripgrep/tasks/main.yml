@@ -20,3 +20,8 @@
   homebrew:
     name: ripgrep
     state: present
+- pacman:
+    name: ripgrep
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"

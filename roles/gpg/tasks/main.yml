@@ -7,7 +7,7 @@
       - gpgme
       - gnupg
       - pinentry-mac
-- apt:
+- package:
     name: pinentry-qt
     state: present
   become: yes

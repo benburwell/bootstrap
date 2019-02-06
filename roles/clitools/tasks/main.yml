@@ -6,12 +6,10 @@
       - htop
       - nmap
       - pandoc
-      - pdftohtml
       - qemu
       - shellcheck
       - sqlite
       - tree
-      - watch
       - curl
       - nnn
   become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"

@@ -1,12 +1,13 @@
 # vim: ft=i3 expandtab:
 
 set $mod Mod1
-font pango:Fira Code 12
-exec --no-startup-id nm-applet
+font pango:Roboto 11
 exec --no-startup-id compton
-exec --no-startup-id randombg
+exec --no-startup-id feh --bg-fill ~/.wallpaper.png
 
-new_window pixel 0
+new_window none
+gaps inner 10
+gaps outer 5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -93,17 +94,17 @@ bindsym XF86AudioMute exec amixer set Master toggle
 # major actions
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
-bindsym $mod+Shift+d exec i3lock -n -i ~/.wallpaper/crystal.png --ignore-empty-password
+bindsym $mod+Shift+d exec i3lock -n -i ~/.wallpaper.png --ignore-empty-password
 bindsym $mod+Shift+f fullscreen
 
 bar {
   position top
   colors {
     background #0e2133
-    focused_workspace   #5c7b99 #5c7b99 #e6e0cf
+    focused_workspace  #5c7b99 #5c7b99 #e6e0cf
     active_workspace   #5c7b99 #5c7b99 #e6e0cf
     inactive_workspace #5c7b99 #0e2133 #5c7b99
     urgent_workspace   #df6a6a #df6a6a #0e2133
   }
-  status_command i3status -c ~/.i3status.conf
+  status_command i3blocks
 }

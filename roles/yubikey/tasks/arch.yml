@@ -1,0 +1,9 @@
+---
+- pacman:
+    name:
+    - yubikey-manager
+    - ccid
+    - opensc
+    - pcsc-tools
+    state: present
+  become: yes

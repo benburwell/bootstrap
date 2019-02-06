@@ -3,8 +3,8 @@
     name: firefox
     state: present
   when: ansible_pkg_mgr == "homebrew"
-- apt:
+- package:
     name: firefox
     state: present
   become: true
-  when: ansible_pkg_mgr == "apt"
+  when: ansible_pkg_mgr != "homebrew"

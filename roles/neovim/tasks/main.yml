@@ -21,6 +21,11 @@
     - software-properties-common
   become: true
   when: ansible_pkg_mgr == "apt"
+- pacman:
+    name:
+    - neovim
+  when: ansible_pkg_mgr == "pacman"
+  become: yes
 #- pip:
 #    name: neovim
 #    state: present
