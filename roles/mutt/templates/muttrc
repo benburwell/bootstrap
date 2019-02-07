@@ -8,7 +8,6 @@ set sort_aux = last-date-received
 set include = yes
 set editor = "nvim +':set textwidth=80' +':set wrap'"
 set mbox_type = Maildir
-set sendmail = /usr/local/bin/msmtp
 set realname = "Ben Burwell"
 set use_envelope_from = yes
 set move = no
@@ -133,6 +132,6 @@ set spoolfile = "+INBOX"
 set postponed = "+Drafts"
 set record = "+Sent"
 set trash = "+Archive"
-set sendmail = "/usr/local/bin/msmtp --account=fastmail"
+set sendmail = {{ '"/usr/local/bin/msmtp --account=fastmail"' if ansible_os_family == 'Darwin' else '"/usr/bin/msmtp --account=fastmail"' }}
 alternates "benburwell@fastmail.com" "ben@virtyx.com" "@benburwell.com$" "bburwell1@gmail.com"
 
