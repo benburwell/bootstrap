@@ -6,3 +6,12 @@
     - alsa-utils
     state: present
   become: yes
+  when: ansible_pkg_mgr == "apt"
+- pacman:
+    name:
+    - pulseaudio
+    - pulseaudio-alsa
+    - alsa-utils
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"

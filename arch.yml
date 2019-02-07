@@ -3,7 +3,7 @@
   hosts: localhost
   vars:
     sudoers_group: sudo
-    gpg_pinentry_program: /usr/bin/pinentry-qt
+    gpg_pinentry_program: /usr/bin/pinentry-gtk-2
   vars_files:
     - vars.yml
   roles:
@@ -68,5 +68,5 @@
     #  tags: net
     #- name: network-manager
     #  tags: net
-    #- name: audio
-    #  tags: audio
+    - name: audio
+      tags: audio

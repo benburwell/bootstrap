@@ -29,10 +29,6 @@
   copy:
     src: i3config
     dest: ~/.config/i3/config
-- name: Install i3 statusbar
-  copy:
-    src: i3status
-    dest: ~/.i3status.conf
 - file:
     path: '{{item}}'
     state: directory

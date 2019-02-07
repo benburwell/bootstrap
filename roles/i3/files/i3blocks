@@ -2,6 +2,16 @@ command=~/code/src/github.com/vivien/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
 interval=15
 color=#5c7b99
 
+[volume-pulseaudio]
+interval=persist
+markup=pango
+SUBSCRIBE=1
+LONG_FORMAT="<span font='FontAwesome'>${SYMB}</span> ${VOL}%"
+AUDIO_MUTED_SYMBOL=\uf6a9
+AUDIO_LOW_SYMBOL=\uf026
+AUDIO_MED_SYMBOL=\uf027
+AUDIO_HIGH_SYMBOL=\uf028
+
 [disk]
 
 [cpu_usage]
