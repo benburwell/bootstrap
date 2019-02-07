@@ -42,4 +42,4 @@ END {
 }
 ' /proc/meminfo)
 
-echo "<span font='FontAwesome'></span> $pct_used"
+echo "<span font='FontAwesome'></span> $pct_used%"

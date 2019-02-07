@@ -27,7 +27,7 @@ function print_block {
         SYMB=$AUDIO_MUTED_SYMBOL
     fi
 
-    echo "<span font='FontAwesome'>${SYMB}</span> ${VOL}"
+    echo "<span font='FontAwesome'>${SYMB}</span> ${VOL}%"
 }
 
 print_block
