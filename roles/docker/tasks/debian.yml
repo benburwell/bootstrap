@@ -1,0 +1,23 @@
+---
+- apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+  become: true
+- apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/debian {{debian_release}} stable'
+    state: present
+  become: true  update_cache: yes
+- apt:
+    name: docker-ce
+    state: present
+  become: true
+- systemd:
+    name: docker
+    state: started
+    enabled: yes
+  become: true
+- user:
+    name: bb
+    groups: docker
+    append: yes
+  become: true

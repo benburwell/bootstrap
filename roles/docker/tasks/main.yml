@@ -1,39 +1,7 @@
 ---
-- name: docker apt key
-  become: true
-  when: ansible_pkg_mgr == "apt"
-  apt_key:
-    url: https://download.docker.com/linux/debian/gpg
-    state: present
-- name: docker apt repository
-  become: true
-  when: ansible_pkg_mgr == "apt"
-  apt_repository:
-    repo: 'deb [arch=amd64] https://download.docker.com/linux/debian {{debian_release}} stable'
-    state: present
-    update_cache: yes
-- name: install docker
-  become: true
-  when: ansible_pkg_mgr == "apt"
-  apt:
-    name: docker-ce
-    state: present
-- name: ensure docker is running
-  become: true
-  when: ansible_system == "Linux"
-  systemd:
-    name: docker
-    state: started
-    enabled: yes
-- name: add bb to docker group
-  become: true
-  when: ansible_system == "Linux"
-  user:
-    name: bb
-    groups: docker
-    append: yes
-- name: Install Docker
-  when: ansible_pkg_mgr == "homebrew"
-  homebrew_cask:
-    name: docker
-    state: present
+- include_tasks: darwin.yml
+  when: ansible_os_family == "Darwin"
+- include_tasks: debian.yml
+  when: ansible_os_family == "Debian"
+- include_tasks: arch.yml
+  when: ansible_os_family == "Archlinux"

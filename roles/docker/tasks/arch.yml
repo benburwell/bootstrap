@@ -1,0 +1,15 @@
+---
+- pacman:
+    name: docker
+    state: present
+  become: yes
+- systemd:
+    name: docker
+    state: started
+    enabled: yes
+  become: true
+- user:
+    name: bb
+    groups: docker
+    append: yes
+  become: true

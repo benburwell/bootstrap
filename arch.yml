@@ -14,8 +14,8 @@
       - ce
     - name: tmux
       tags: ce
-    #- lynx
-    #- python
+    - lynx
+    - python
     - golang
     - neovim
     - jq
@@ -45,7 +45,7 @@
     #- etcher
     #- slack
     #- spotify
-    #- docker
+    - docker
     - name: yubikey
       tags: crypto
     #- newsboat

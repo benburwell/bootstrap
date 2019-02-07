@@ -1,0 +1,6 @@
+---
+- name: Install Docker
+  when: ansible_pkg_mgr == "homebrew"
+  homebrew_cask:
+    name: docker
+    state: present
