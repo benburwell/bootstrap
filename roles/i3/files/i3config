@@ -6,8 +6,8 @@ exec --no-startup-id compton
 exec --no-startup-id feh --bg-fill ~/.wallpaper.png
 
 new_window none
-gaps inner 10
-gaps outer 5
+gaps inner 8
+gaps outer 4
 smart_gaps on
 
 # Use Mouse+$mod to drag floating windows to their wanted position

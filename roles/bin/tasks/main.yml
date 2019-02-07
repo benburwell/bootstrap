@@ -15,6 +15,15 @@
   - brightness.sh
   - extract
   - files
+  - get_battery
+  - get_cpu
+  - get_date
+  - get_disk
+  - get_essid
+  - get_iface
+  - get_memory
+  - get_public_ip
+  - get_volume
   - headers
   - launch-chrome
   - lsproc
@@ -27,3 +36,4 @@
   - randword
   - setbg.sh
   - taf
+
