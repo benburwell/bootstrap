@@ -8,3 +8,8 @@
     state: present
   when: ansible_pkg_mgr == "apt"
   become: yes
+- pacman:
+    name: texlive-most
+    state: present
+  when: ansible_pkg_mgr == "pacman"
+  become: yes

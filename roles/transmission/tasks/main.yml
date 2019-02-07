@@ -4,3 +4,8 @@
     name: transmission
     state: present
   when: ansible_pkg_mgr == "homebrew"
+- pacman:
+    name: transmission-qt
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"

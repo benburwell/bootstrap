@@ -3,3 +3,9 @@
     name: network-manager
     state: present
   become: yes
+  when: ansible_pkg_mgr == "apt"
+- pacman:
+    name: networkmanager
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"

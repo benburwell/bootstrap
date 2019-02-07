@@ -11,3 +11,10 @@
     state: present
   when: ansible_pkg_mgr == "apt"
   become: true
+- pacman:
+    name:
+    - nodejs
+    - yarn
+    state: present
+  when: ansible_pkg_mgr == "pacman"
+  become: true

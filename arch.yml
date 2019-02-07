@@ -29,28 +29,28 @@
     - ripgrep
     - gpg
     - mutt
-    #- ffmpeg
-    #- vlc
-    #- gimp
-    #- nodejs
-    #- tex
+    - ffmpeg
+    - vlc
+    - gimp
+    - nodejs
+    - tex
     - git
-    #- mitmproxy
+    - mitmproxy
     #- ctags
     #- name: clitools
     #  tags: ce
     #- virtualbox
-    #- wireshark
-    #- transmission
+    - wireshark
+    - transmission
     #- etcher
     #- slack
     #- spotify
     - docker
     - name: yubikey
       tags: crypto
-    #- newsboat
+    - newsboat
     - bin
-    #- irssi
+    - irssi
     - name: ssh
       tags: crypto
     - firefox
@@ -66,7 +66,7 @@
       tags: crypto
     #- name: autofs
     #  tags: net
-    #- name: network-manager
-    #  tags: net
+    - name: network-manager
+      tags: net
     - name: audio
       tags: audio

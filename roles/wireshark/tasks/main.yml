@@ -9,3 +9,10 @@
     state: present
   become: yes
   when: ansible_pkg_mgr == "apt"
+- pacman:
+    name:
+    - wireshark-cli
+    - wireshark-qt
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == "pacman"
