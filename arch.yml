@@ -19,8 +19,8 @@
     - golang
     - neovim
     - jq
-    #- aws
-    #- postgresql-client
+    - aws
+    - postgresql-client
     #- java
     #- google-java-format
     #- ngrok
@@ -28,7 +28,7 @@
     - fzf
     - ripgrep
     - gpg
-    #- mutt
+    - mutt
     #- ffmpeg
     #- vlc
     #- gimp

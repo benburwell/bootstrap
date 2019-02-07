@@ -1,17 +1,16 @@
 ---
 - name: Install email packages
   package:
-    name: '{{item}}'
+    name:
+    - mutt
+    - msmtp
+    - notmuch
+    - offlineimap
+    - vdirsyncer
+    - khard
+    - khal
     state: present
   become: "{{'no' if ansible_pkg_mgr == 'homebrew' else 'yes'}}"
-  loop:
-  - mutt
-  - msmtp
-  - notmuch
-  - offlineimap
-  - vdirsyncer
-  - khard
-  - khal
 - template:
     src: muttrc
     dest: ~/.muttrc

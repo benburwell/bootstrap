@@ -1,17 +1,19 @@
 ---
-- name: install psql
-  when: ansible_pkg_mgr == "apt"
+- when: ansible_pkg_mgr == "apt"
   become: true
   apt:
     name: postgresql-client
     state: present
-- name: install psql
-  when: ansible_pkg_mgr == "homebrew"
+- when: ansible_pkg_mgr == "pacman"
+  become: true
+  pacman:
+    name: postgresql-libs
+    state: present
+- when: ansible_pkg_mgr == "homebrew"
   homebrew:
     name: "postgresql@9.5"
     state: present
-- name: pgpass file
-  template:
+- template:
     src: pgpass.j2
     dest: '~/.pgpass'
     mode: '600'
