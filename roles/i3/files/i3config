@@ -3,7 +3,7 @@
 set $mod Mod1
 font pango:Roboto 12
 exec --no-startup-id compton
-exec --no-startup-id feh --bg-fill ~/.wallpaper.png
+exec --no-startup-id randombg
 
 new_window none
 gaps inner 8
@@ -96,7 +96,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 # major actions
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
-bindsym $mod+Shift+d exec i3lock -n -i ~/.wallpaper.png --ignore-empty-password
+bindsym $mod+Shift+d exec i3lock-fancy -- scrot -z
 bindsym $mod+Shift+f fullscreen
 
 bar {
