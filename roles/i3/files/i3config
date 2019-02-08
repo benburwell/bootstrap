@@ -102,7 +102,7 @@ bindsym $mod+Shift+f fullscreen
 bar {
   position top
   colors {
-    background #0e2133cc
+    background #0e2133dd
     focused_workspace  #0e2133 #0e2133 #e6e0cf
     active_workspace   #0e2133 #0e2133 #e6e0cf
     inactive_workspace #0e2133 #0e2133 #5c7b99
