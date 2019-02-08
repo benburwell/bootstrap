@@ -13,18 +13,16 @@ smart_gaps on
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
 bindsym $mod+Return exec alacritty
 bindsym $mod+f exec firefox
-
-# get a password
 bindsym $mod+Shift+p exec passman
-
-# kill focused window
 bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -fn "Roboto" -nb "#0e2133" -nf "#fff9e9" -sb "#7390bf" -sf "#0e2133"
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+bindsym $mod+Shift+f fullscreen
+bindsym $mod+Shift+d exec ~/.bin/pwrman
+bindsym $mod+Shift+n exec alacritty --command nmtui
 
 # change focus
 bindsym $mod+h focus left
@@ -92,12 +90,6 @@ bindsym XF86MonBrightnessDown exec sudo ~/.bin/brightness.sh -10
 bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2db+
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2db-
 bindsym XF86AudioMute exec amixer set Master toggle
-
-# major actions
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exit
-bindsym $mod+Shift+d exec i3lock-fancy -- scrot -z
-bindsym $mod+Shift+f fullscreen
 
 bar {
   position top
