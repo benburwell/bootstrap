@@ -24,7 +24,7 @@ bindsym $mod+Shift+p exec passman
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn "Roboto" -nb "#0e2133" -nf "#fff9e9" -sb "#7390bf" -sf "#0e2133"
 
 # change focus
 bindsym $mod+h focus left
@@ -102,13 +102,12 @@ bindsym $mod+Shift+f fullscreen
 bar {
   position top
   colors {
-    background #0e2133dd
+    background #0e2133
     focused_workspace  #0e2133 #0e2133 #e6e0cf
     active_workspace   #0e2133 #0e2133 #e6e0cf
     inactive_workspace #0e2133 #0e2133 #5c7b99
     urgent_workspace   #df6a6a #df6a6a #0e2133
   }
-  separator_symbol "  "
   status_command SCRIPT_DIR=~/code/src/github.com/vivien/i3blocks-contrib i3blocks
-  i3bar_command i3bar -t
+  i3bar_command i3bar
 }
