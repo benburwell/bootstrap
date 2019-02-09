@@ -12,6 +12,15 @@
     - pulseaudio
     - pulseaudio-alsa
     - alsa-utils
+    - alsa-lib
+    - cmus
     state: present
   become: yes
   when: ansible_pkg_mgr == "pacman"
+- file:
+    path: ~/.config/cmus
+    state: directory
+    mode: 0700
+- copy:
+    src: cmusrc
+    dest: ~/.config/cmus/rc

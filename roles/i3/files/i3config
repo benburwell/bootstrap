@@ -90,6 +90,9 @@ bindsym XF86MonBrightnessDown exec sudo ~/.bin/brightness.sh -10
 bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2db+
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2db-
 bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioPlay exec cmus-remote -u
+bindsym XF86AudioNext exec cmus-remote -n
+bindsym XF86AudioPrev exec cmus-remote -r
 
 bar {
   position top
