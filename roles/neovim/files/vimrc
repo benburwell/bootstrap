@@ -40,13 +40,13 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vito-c/jq.vim'
 call plug#end()
 
-hi! Comment      ctermfg=DarkBlue cterm=Bold
-hi! NonText      ctermfg=DarkBlue
-hi! Folded       ctermfg=DarkBlue ctermbg=NONE
-hi! LineNr       ctermfg=DarkBlue
-hi! StatusLine   cterm=bold ctermfg=Blue ctermbg=NONE
-hi! StatusLineNC cterm=NONE ctermfg=Black ctermbg=NONE
-hi! VertSplit    cterm=NONE ctermfg=Black ctermbg=NONE
+hi! Comment      cterm=NONE ctermfg=DarkBlue ctermbg=NONE
+hi! NonText      cterm=NONE ctermfg=DarkBlue ctermbg=NONE
+hi! Folded       cterm=NONE ctermfg=DarkBlue ctermbg=NONE
+hi! LineNr       cterm=NONE ctermfg=DarkBlue ctermbg=NONE
+hi! StatusLine   cterm=bold ctermfg=Blue     ctermbg=NONE
+hi! StatusLineNC cterm=NONE ctermfg=DarkBlue ctermbg=NONE
+hi! VertSplit    cterm=NONE ctermfg=DarkBlue ctermbg=NONE
 
 au FileType markdown setlocal spell tw=80 colorcolumn=81 nosmartindent
 au FileType gitcommit setlocal spell
