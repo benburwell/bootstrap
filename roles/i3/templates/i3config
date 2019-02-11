@@ -8,7 +8,6 @@ exec --no-startup-id randombg
 new_window none
 gaps inner 8
 gaps outer 4
-smart_gaps on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -17,7 +16,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+f exec firefox
 bindsym $mod+Shift+p exec passman
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run -fn "Roboto" -nb "#0e2133" -nf "#fff9e9" -sb "#7390bf" -sf "#0e2133"
+bindsym $mod+d exec dmenu_run -fn "Roboto" -nb "{{terminal_background_color}}" -nf "{{terminal_foreground_color}}" -sb "{{terminal_blue_color}}" -sf "{{terminal_background_color}}"
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 bindsym $mod+Shift+f fullscreen
@@ -97,12 +96,12 @@ bindsym XF86AudioPrev exec cmus-remote -r
 bar {
   position top
   colors {
-    background #0e2133
-    focused_workspace  #0e2133 #0e2133 #e6e0cf
-    active_workspace   #0e2133 #0e2133 #e6e0cf
-    inactive_workspace #0e2133 #0e2133 #5c7b99
-    urgent_workspace   #df6a6a #df6a6a #0e2133
+    background         {{terminal_background_color}}
+    focused_workspace  {{terminal_background_color}} {{terminal_background_color}} {{terminal_foreground_color}}
+    active_workspace   {{terminal_background_color}} {{terminal_background_color}} {{terminal_foreground_color}}
+    inactive_workspace {{terminal_background_color}} {{terminal_background_color}} {{terminal_bright_black_color}}
+    urgent_workspace   {{terminal_red_color}}        {{terminal_red_color}}        {{terminal_background_color}}
   }
-  status_command SCRIPT_DIR=~/code/src/github.com/vivien/i3blocks-contrib i3blocks
+  status_command i3blocks
   i3bar_command i3bar
 }

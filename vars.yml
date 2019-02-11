@@ -13,7 +13,7 @@ terminal_bold_color: '#ffffff'
 terminal_highlight_color: '#00374b'
 terminal_highlight_text_color: '#feffff'
 
-terminal_black_color: '#5c7b99'
+terminal_black_color: '#151c23'
 terminal_bright_black_color: '#5c7b99'
 terminal_red_color: '#df6a6a'
 terminal_bright_red_color: '#ff8c8c'

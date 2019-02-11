@@ -40,10 +40,10 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vito-c/jq.vim'
 call plug#end()
 
-hi! Comment      ctermfg=Black
-hi! NonText      ctermfg=Black
-hi! Folded       ctermfg=Black ctermbg=NONE
-hi! LineNr       ctermfg=Black
+hi! Comment      ctermfg=DarkBlue cterm=Bold
+hi! NonText      ctermfg=DarkBlue
+hi! Folded       ctermfg=DarkBlue ctermbg=NONE
+hi! LineNr       ctermfg=DarkBlue
 hi! StatusLine   cterm=bold ctermfg=Blue ctermbg=NONE
 hi! StatusLineNC cterm=NONE ctermfg=Black ctermbg=NONE
 hi! VertSplit    cterm=NONE ctermfg=Black ctermbg=NONE

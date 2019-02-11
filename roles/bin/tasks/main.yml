@@ -3,6 +3,12 @@
     path: ~/.bin
     state: directory
     mode: 0700
+- template:
+    src: '{{item}}'
+    dest: '~/.bin/{{item}}'
+    mode: 0700
+  loop:
+  - pwrman
 - copy:
     src: '{{item}}'
     dest: '~/.bin/{{item}}'
@@ -32,7 +38,6 @@
   - mutt-notmuch-py
   - mvi
   - psqlenv
-  - pwrman
   - randombg
   - randword
   - setbg.sh

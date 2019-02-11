@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
 dmenu_fn=Roboto
-dmenu_nb="#0e2133"
-dmenu_nf="#fff9e9"
-dmenu_sb="#7390bf"
-dmenu_sf="#0e2133"
+dmenu_nb="{{terminal_background_color}}"
+dmenu_nf="{{terminal_foreground_color}}"
+dmenu_sb="{{terminal_blue_color}}"
+dmenu_sf="{{terminal_background_color}}"
 
 menu() {
   dmenu -fn "$dmenu_fn" -nf "$dmenu_nf" -nb "$dmenu_nb" -sb "$dmenu_sb" -sf "$dmenu_sf" -p "$1"
