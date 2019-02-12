@@ -67,6 +67,8 @@
       tags: de,i3
     - name: passman
       tags: crypto
+    - name: pass
+      tags: crypto
     #- name: autofs
     #  tags: net
     - name: network-manager

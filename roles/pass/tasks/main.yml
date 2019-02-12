@@ -1,8 +1,14 @@
 ---
-- name: Install required pacakges for pass
-  homebrew:
+- homebrew:
     name:
       - pass
       - pwgen
       - qrencode
       - oath-toolkit
+  when: ansible_pkg_mgr == "homebrew"
+- pacman:
+    name:
+    - pass
+    - pass-otp
+  become: yes
+  when: ansible_pkg_mgr == "pacman"
