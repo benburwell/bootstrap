@@ -10,3 +10,8 @@
   homebrew_cask:
     name: java
     state: present
+- pacman:
+    name: jdk8-openjdk
+    state: present
+  when: ansible_pkg_mgr == "pacman"
+  become: yes

@@ -21,10 +21,13 @@
     - jq
     - aws
     - postgresql-client
-    #- java
-    #- google-java-format
+    - name: java
+      tags: java
+    - name: google-java-format
+      tags: java
     #- ngrok
-    #- maven
+    - name: maven
+      tags: java
     - fzf
     - ripgrep
     - gpg
