@@ -22,6 +22,7 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Shift+f fullscreen
 bindsym $mod+Shift+d exec ~/.bin/pwrman
 bindsym $mod+Shift+n exec alacritty --command nmtui
+bindsym Print exec scrot -z
 
 # change focus
 bindsym $mod+h focus left
