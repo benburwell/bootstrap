@@ -36,10 +36,6 @@ source $ZSH/completion.zsh
 if [[ -f "{{script}}" ]] ; then source "{{script}}" ; fi
 {% endfor %}
 
-if [[ "$ALACRITTY" ]]; then
-  ~/.bin/alacritty-fullscreen
-fi
-
 if [[ -x /usr/bin/setxkbmap ]]; then
   setxkbmap -option caps:escape
 fi

@@ -1,11 +1,11 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
+#
 # {{ansible_managed}}
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-{% if ansible_os_family == "Darwin" %}
-env:
+#env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -13,8 +13,6 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   #TERM: xterm-256color
-  ALACRITTY: 1
-{% endif %}
 
 window:
   # Window dimensions (changes require restart)
@@ -461,7 +459,9 @@ key_bindings:
   #- { key: K,        mods: Command, chars: "\x0c"                        }
   #- { key: V,        mods: Command, action: Paste                        }
   #- { key: C,        mods: Command, action: Copy                         }
-  #- { key: H,        mods: Command, action: Hide                         }
+  {% if ansible_os_family == 'Darwin' %}
+  - { key: H,        mods: Command, action: None                         }
+  {% endif %}
   #- { key: Q,        mods: Command, action: Quit                         }
   #- { key: W,        mods: Command, action: Quit                         }
 
