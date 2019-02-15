@@ -17,7 +17,6 @@
   - _docker
   - _docker-compose
   - _jq
-  - alacritty-fullscreen
   - brightness.sh
   - extract
   - files
