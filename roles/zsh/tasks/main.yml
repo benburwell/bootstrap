@@ -31,23 +31,24 @@
     src: '{{item}}'
     dest: '~/.zsh/{{item}}'
   loop:
-    - aliases.zsh
-    - completion.zsh
-    - config.zsh
-    - env.zsh
-    - path.zsh
-    - window.zsh
+  - aliases.zsh
+  - completion.zsh
+  - config.zsh
+  - env.zsh
+  - path.zsh
+  - window.zsh
+  - prompt.zsh
 - copy:
     src: 'func_{{item}}.zsh'
     dest: '~/.zsh/functions/{{item}}.zsh'
   loop:
-    - dirty
-    - ebdeploy
-    - ec2
-    - ghclone
-    - git-branches
-    - prs
-    - rfc
-    - rp
-    - sheb
-    - track
+  - dirty
+  - ebdeploy
+  - ec2
+  - ghclone
+  - git-branches
+  - prs
+  - rfc
+  - rp
+  - sheb
+  - track

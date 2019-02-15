@@ -14,6 +14,7 @@ source $ZSH/path.zsh
 source $ZSH/window.zsh
 source $ZSH/aliases.zsh
 source $ZSH/config.zsh
+source $ZSH/prompt.zsh
 
 for f in $(find $ZSH/functions -type f); do
   source $f
