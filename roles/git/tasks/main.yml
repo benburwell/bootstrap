@@ -17,3 +17,6 @@
     src: gitignore
     dest: ~/.gitignore
     mode: 0600
+- template:
+    src: hub.yml
+    dest: ~/.config/hub

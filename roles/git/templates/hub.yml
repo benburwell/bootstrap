@@ -1,0 +1,5 @@
+# {{ansible_managed}}
+github.com:
+- user: benburwell
+  oauth_token: {{github_oauth_token}}
+  protocol: https

@@ -160,3 +160,5 @@ zsh_external_startup_scripts:
 - $HOME/.rvm/scripts/rvm
 - $HOME/Applications/google-cloud-sdk/path.zsh.inc
 - $HOME/Applications/google-cloud-sdk/completion.zsh.inc
+
+github_oauth_token: "{{lookup('pipe', 'pass github/token')}}"
