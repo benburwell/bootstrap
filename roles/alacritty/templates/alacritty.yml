@@ -459,9 +459,9 @@ key_bindings:
   #- { key: K,        mods: Command, chars: "\x0c"                        }
   #- { key: V,        mods: Command, action: Paste                        }
   #- { key: C,        mods: Command, action: Copy                         }
-  {% if ansible_os_family == 'Darwin' %}
+{% if ansible_os_family == 'Darwin' %}
   - { key: H,        mods: Command, action: None                         }
-  {% endif %}
+{% endif %}
   #- { key: Q,        mods: Command, action: Quit                         }
   #- { key: W,        mods: Command, action: Quit                         }
 
