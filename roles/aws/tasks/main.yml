@@ -19,3 +19,8 @@
     src: config.j2
     dest: '~/.aws/config'
     mode: '600'
+- pacman:
+    name: s3cmd
+    state: present
+  become: yes
+  when: ansible_pkg_mgr == 'pacman'
