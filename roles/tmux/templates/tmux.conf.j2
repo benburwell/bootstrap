@@ -17,7 +17,10 @@ set-option -g mode-keys vi
 
 set-option -g status-bg default
 set-option -g status-fg green
+
+{% if ansible_os_family != "Darwin" %}
 set-option -g status off
+{% endif %}
 
 # make | and - split windows
 bind-key | split-window -h
