@@ -29,17 +29,13 @@ alias gbs="git-branches"
 alias gc="git commit"
 alias gcb="git checkout -b"
 alias gco="git checkout"
-alias gcp="git cherry-pick"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gf="git fetch"
 alias gl="git pull"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN>%Creset' --abbrev-commit"
-alias glr="git pull --rebase"
-alias glsr="git ls-remote"
 alias gm="git merge"
 alias gp="git push"
-alias gr="git remote"
 alias gs="git status"
 alias gsl="git stash list"
 alias gsp="git stash pop"
@@ -55,9 +51,6 @@ alias dcud="docker-compose up -d"
 
 # docker
 alias d="docker"
-alias dim="docker images"
-alias dps="docker ps"
-alias dpsa="docker ps -a"
 
 # edit
 alias e="nvim"
@@ -79,8 +72,7 @@ alias k="kubectl"
 
 # hub
 alias hb="hub browse"
-alias hbp="hub browse -- pulls"
-alias hbc="hub browse --commits"
+alias hbl="hub browse -- pulls"
+alias hbc="hub browse -- commits"
 
-alias s3="s3cmd"
 alias x="extract"
