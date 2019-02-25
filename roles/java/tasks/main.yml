@@ -1,15 +1,17 @@
 ---
-- name: apt-get openjdk-8
-  become: yes
+- become: yes
   when: ansible_pkg_mgr == "apt"
   apt:
     name: openjdk-8-jdk
     state: present
-- name: homebrew java
-  when: ansible_pkg_mgr == "homebrew"
-  homebrew_cask:
-    name: java
+- homebrew_tap:
+    name: caskroom/versions
     state: present
+  when: ansible_pkg_mgr == "homebrew"
+- homebrew_cask:
+    name: java8
+    state: present
+  when: ansible_pkg_mgr == "homebrew"
 - pacman:
     name: jdk8-openjdk
     state: present
