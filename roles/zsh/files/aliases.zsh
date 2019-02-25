@@ -83,3 +83,4 @@ alias hbp="hub browse -- pulls"
 alias hbc="hub browse --commits"
 
 alias s3="s3cmd"
+alias x="extract"
