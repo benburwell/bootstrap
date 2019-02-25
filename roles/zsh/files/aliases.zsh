@@ -4,12 +4,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-if [[ $(uname) == "Darwin" ]]; then
-  alias l="ls -lAhG"
-  alias la="ls -lAGh"
-  alias ll="ls -lGh"
-  alias ls="ls -Gh"
-elif [[ $(uname) == "FreeBSD" ]]; then
+if [[ $(uname) == "Darwin" || $(uname) == "FreeBSD" ]]; then
   alias l="ls -lAhG"
   alias la="ls -lAGh"
   alias ll="ls -lGh"
