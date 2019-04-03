@@ -16,3 +16,4 @@ export NVM_DIR="$HOME/.nvm"
 export CDPATH=$(find "$PROJECTS/src" -maxdepth 1 -type d -print0 | tr '\0' ':')$HOME
 export SSLKEYLOGFILE="$HOME/.mitmproxy/sslkeylogfile.txt"
 export PROMPT="%B%F{black}%~%f%b "
+export BAT_PAGER="less -rf"

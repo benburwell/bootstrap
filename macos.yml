@@ -64,6 +64,7 @@
     - gnucash
     - name: alacritty
       tags: ce
+    - bat
 # TODO
 #k8s
 #mitmproxy
