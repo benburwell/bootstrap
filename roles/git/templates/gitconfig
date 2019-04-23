@@ -51,6 +51,8 @@
 	chainreplyto = false
 	confirm = auto
 	annotate = yes
+[rebase]
+	autoSquash = true
 [github]
 	user = benburwell
 [ghi]
