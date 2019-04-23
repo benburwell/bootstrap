@@ -31,6 +31,7 @@ Plug 'junegunn/fzf'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
 Plug 'leafgarland/typescript-vim', {'for' : 'typescript'}
+Plug 'mhinz/vim-rfc'
 Plug 'prettier/vim-prettier'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
