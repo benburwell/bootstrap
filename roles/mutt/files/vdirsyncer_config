@@ -5,6 +5,7 @@ status_path = "~/.vdirsyncer/status/"
 a = "fastmail_contacts_local"
 b = "fastmail_contacts_remote"
 collections = ["from a", "from b"]
+conflict_resolution = "b wins"
 
 [storage fastmail_contacts_local]
 type = "filesystem"
@@ -21,6 +22,7 @@ password.fetch = ["command", "pass", "vdirsyncer/fastmail-contacts"]
 a = "fastmail_calendars_local"
 b = "fastmail_calendars_remote"
 collections = ["from a", "from b"]
+conflict_resolution = "b wins"
 
 [storage fastmail_calendars_local]
 type = "filesystem"
