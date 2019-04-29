@@ -16,6 +16,7 @@ set timeout = 30
 set wait_key = no
 unset record
 set query_command = "khard email --parsable '%s'"
+set edit_headers = yes
 
 bind index gg first-entry
 bind index G last-entry
