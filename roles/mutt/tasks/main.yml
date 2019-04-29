@@ -31,7 +31,7 @@
     src: offlineimaprc
     dest: ~/.offlineimaprc
     mode: 0600
-- copy:
+- template:
     src: notmuch-config
     dest: ~/.notmuch-config
     mode: 0600
