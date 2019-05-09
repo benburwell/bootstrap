@@ -5,7 +5,7 @@ set charset = "utf-8"
 set pager_context = 5
 set sort = threads
 set include = yes
-set editor = "nvim +':set textwidth=80' +':set wrap'"
+set editor = "nvim +':set textwidth=72' +':set wrap'"
 set mbox_type = Maildir
 set realname = "Ben Burwell"
 set use_envelope_from = yes
